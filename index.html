@@ -304,6 +304,31 @@ dl.summary dd ul{margin:0;padding-left:18px;display:flex;flex-direction:column;g
 .wf .st span{font-size:12.5px;color:var(--ink-2);line-height:1.4;}
 @media (max-width:1000px){.wf{grid-template-columns:repeat(3,minmax(0,1fr));}}
 @media (max-width:600px){.wf{grid-template-columns:1fr;}}
+/* ── SVG architecture figure ────────────────────────────────────────────── */
+.figwrap{margin:0;display:flex;flex-direction:column;gap:12px;}
+.archsvg{width:100%;max-width:100%;height:auto;display:block;color:var(--ink-2);}
+.archsvg rect.n{fill:var(--surface);stroke:var(--rule-strong);stroke-width:1;}
+.archsvg rect.hot{fill:var(--surface-2);stroke:var(--accent);stroke-width:1.5;}
+.archsvg rect.det{fill:var(--surface);stroke:var(--accent);stroke-width:1.5;}
+.archsvg rect.gate{fill:var(--surface);stroke:var(--brass);stroke-width:1.5;}
+.archsvg line.div{stroke:var(--rule);stroke-width:1;}
+.archsvg path.c{stroke:currentColor;stroke-width:1.2;fill:none;opacity:.6;}
+.archsvg path.fb{stroke:var(--accent);stroke-width:1.2;fill:none;stroke-dasharray:5 4;}
+.archsvg path.ah{fill:currentColor;opacity:.85;}
+.archsvg path.ahf{fill:var(--accent);}
+.archsvg text{font-family:var(--body);fill:var(--ink);}
+.archsvg .ttl{font-size:14px;font-weight:600;}
+.archsvg .sub{font-size:11.5px;fill:var(--ink-2);font-weight:400;}
+.archsvg .hotx{fill:var(--accent);}
+.archsvg .gatex{fill:var(--brass);}
+.archsvg .eyebrow-t{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;fill:var(--muted);}
+.figwrap figcaption{font-size:14.5px;color:var(--ink-2);max-width:74ch;line-height:1.55;}
+.archsvg rect.ai{fill:var(--surface);stroke:var(--brass);stroke-width:1.5;}
+.archsvg rect.rail{fill:var(--surface-2);stroke:var(--rule);stroke-width:1;stroke-dasharray:4 3;}
+.archsvg rect.base{fill:none;stroke:var(--rule-strong);stroke-width:1;stroke-dasharray:5 4;}
+.archsvg path.sc{stroke:currentColor;stroke-width:1;fill:none;opacity:.35;stroke-dasharray:4 3;}
+.archsvg .sm{font-size:12.5px;}
+.archsvg .xs{font-size:10.5px;}
 </style>
 </head>
 <body>
@@ -699,27 +724,31 @@ dl.summary dd ul{margin:0;padding-left:18px;display:flex;flex-direction:column;g
         </dl>
 
 
-        <div class="arch">
-          <div class="lyr"><span class="lbl">Evidence</span><div class="bits"><span class="bit">value</span><span class="bit">source</span><span class="bit">date</span><span class="bit">confidence</span><span class="bit">verification status</span><span class="bit">conflict status</span></div></div>
-          <div class="down" aria-hidden="true"></div>
-          <div class="lyr det"><span class="lbl">Deterministic financial calculation</span><div class="bits"><span class="bit">NOI</span><span class="bit">DSCR</span><span class="bit">debt yield</span><span class="bit">IRR</span><span class="bit">equity multiple</span><span class="bit">max allowable offer</span></div></div>
-          <div class="down" aria-hidden="true"></div>
-          <div class="lyr"><span class="lbl">Risk rules &amp; assumptions</span><div class="bits"><span class="bit">stress tests</span><span class="bit">exit cap sensitivity</span><span class="bit">binding constraint</span></div></div>
-          <div class="down" aria-hidden="true"></div>
-          <div class="lyr ai"><span class="lbl">AI narrative &amp; explanation</span><div class="bits"><span class="bit">prose only</span><span class="bit">no financial figures</span></div></div>
-        </div>
+        <figure class="figwrap">
+          <svg class="archsvg" viewBox="0 0 1160 840" role="img"
+               aria-label="REIDE architecture. Five input sources — address and property data, document uploads, manual inputs, public data APIs, and third-party systems — feed ingestion and normalization. That passes to intelligence and reconciliation, which detects discrepancies between sources and scores confidence, then to a deterministic underwriting and modeling engine covering scenarios, financial modeling, valuation, metrics and stress testing. Only then does an AI analysis layer add narrative, risk identification and recommendations. Results reach a decision dashboard and outputs. Running alongside are four governance services: data quality and validation, an evidence store holding every source and decision versioned and timestamped, an assumptions manager under version control, and AI guardrails permitting no fabricated numbers, requiring citations, confidence scoring and policy enforcement. A foundation layer carries security, permissions, audit logs, encryption and compliance.">
+            <defs>
+              <marker id="ra" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+                <path d="M0 0 L8 4 L0 8 z" class="ah"/>
+              </marker>
+            </defs>
+            <path d="M130 102 V120 M279 102 V120 M428 102 V120 M577 102 V120 M726 102 V120 M130 120 H726 M430 120 V140" class="c" marker-end="url(#ra)"/><path d="M430 202 V246" class="c" marker-end="url(#ra)"/><path d="M430 308 V352" class="c" marker-end="url(#ra)"/><path d="M430 438 V470" class="c" marker-end="url(#ra)"/><path d="M430 542 V576" class="c" marker-end="url(#ra)"/><path d="M430 638 V670" class="c" marker-end="url(#ra)"/><path d="M430 732 V764" class="c" marker-end="url(#ra)"/>
+            <rect x="60" y="16" width="141" height="86" rx="4" class="n"/><text x="130" y="46" text-anchor="middle" class="ttl sm">Address / property</text><text x="130" y="66" text-anchor="middle" class="sub xs">parcel · zoning</text><text x="130" y="80" text-anchor="middle" class="sub xs">comps · permits</text><text x="130" y="94" text-anchor="middle" class="sub xs">flood data</text><rect x="209" y="16" width="141" height="86" rx="4" class="n"/><text x="279" y="46" text-anchor="middle" class="ttl sm">Document uploads</text><text x="279" y="66" text-anchor="middle" class="sub xs">OM · T-12</text><text x="279" y="80" text-anchor="middle" class="sub xs">rent roll · leases</text><text x="279" y="94" text-anchor="middle" class="sub xs">appraisal · PCA</text><rect x="358" y="16" width="141" height="86" rx="4" class="n"/><text x="428" y="46" text-anchor="middle" class="ttl sm">Manual inputs</text><text x="428" y="66" text-anchor="middle" class="sub xs">assumptions</text><text x="428" y="80" text-anchor="middle" class="sub xs">renovation · financing</text><text x="428" y="94" text-anchor="middle" class="sub xs">hold strategy</text><rect x="507" y="16" width="141" height="86" rx="4" class="n"/><text x="577" y="46" text-anchor="middle" class="ttl sm">Public data &amp; APIs</text><text x="577" y="66" text-anchor="middle" class="sub xs">county · assessor</text><text x="577" y="80" text-anchor="middle" class="sub xs">zoning data</text><text x="577" y="94" text-anchor="middle" class="sub xs">market providers</text><rect x="656" y="16" width="141" height="86" rx="4" class="n"/><text x="726" y="46" text-anchor="middle" class="ttl sm">Third-party systems</text><text x="726" y="66" text-anchor="middle" class="sub xs">CRM · drive</text><text x="726" y="80" text-anchor="middle" class="sub xs">spreadsheets</text><text x="726" y="94" text-anchor="middle" class="sub xs">property databases</text><rect x="60" y="140" width="740" height="62" rx="4" class="n"/><text x="430" y="166" text-anchor="middle" class="ttl">Ingestion &amp; normalization</text><text x="430" y="185" text-anchor="middle" class="sub">OCR · parsing · extraction · standardization · entity resolution</text><rect x="60" y="246" width="740" height="62" rx="4" class="hot"/><text x="430" y="272" text-anchor="middle" class="ttl hotx">Intelligence &amp; reconciliation</text><text x="430" y="291" text-anchor="middle" class="sub">cross-source reconciliation · discrepancy detection · confidence scoring</text><rect x="60" y="352" width="740" height="86" rx="4" class="det"/><text x="430" y="382" text-anchor="middle" class="ttl">Underwriting &amp; modeling engine</text><text x="430" y="404" text-anchor="middle" class="sub">scenarios · financial modeling · valuation · metrics · risk &amp; stress testing</text><rect x="60" y="470" width="740" height="72" rx="4" class="ai"/><text x="430" y="500" text-anchor="middle" class="ttl gatex">AI analysis &amp; insights</text><text x="430" y="522" text-anchor="middle" class="sub">narrative · risk identification · market context · recommendations</text><rect x="60" y="576" width="740" height="62" rx="4" class="n"/><text x="430" y="602" text-anchor="middle" class="ttl">Decision dashboard</text><text x="430" y="621" text-anchor="middle" class="sub">executive summary · scenario comparison · sensitivity · source citations</text><rect x="60" y="670" width="740" height="62" rx="4" class="n"/><text x="430" y="696" text-anchor="middle" class="ttl">Outputs &amp; integrations</text><text x="430" y="715" text-anchor="middle" class="sub">PDF reports · Excel models · data room · CRM sync · API · webhooks</text><rect x="60" y="764" width="740" height="54" rx="4" class="base"/><text x="430" y="790" text-anchor="middle" class="ttl">Foundation layer</text><text x="430" y="809" text-anchor="middle" class="sub">security · roles &amp; permissions · audit logs · encryption · compliance</text><rect x="830" y="140" width="310" height="62" rx="4" class="rail"/><text x="845" y="164" text-anchor="start" class="ttl sm">Data quality &amp; validation</text><text x="845" y="182" text-anchor="start" class="sub xs">completeness · accuracy</text><text x="845" y="196" text-anchor="start" class="sub xs">anomaly detection</text><path d="M830 171 H800" class="sc"/><rect x="830" y="246" width="310" height="62" rx="4" class="rail"/><text x="845" y="270" text-anchor="start" class="ttl sm">Evidence store</text><text x="845" y="288" text-anchor="start" class="sub xs">every source and decision, versioned and timestamped</text><path d="M830 277 H800" class="sc"/><rect x="830" y="352" width="310" height="86" rx="4" class="rail"/><text x="845" y="376" text-anchor="start" class="ttl sm">Assumptions manager</text><text x="845" y="394" text-anchor="start" class="sub xs">global and scenario assumptions, version-controlled</text><path d="M830 395 H800" class="sc"/><rect x="830" y="470" width="310" height="72" rx="4" class="rail"/><text x="845" y="494" text-anchor="start" class="ttl sm">AI guardrails</text><text x="845" y="512" text-anchor="start" class="sub xs">no fabricated numbers · citations</text><text x="845" y="526" text-anchor="start" class="sub xs">confidence · policy</text><path d="M830 506 H800" class="sc"/>
+          </svg>
+          <figcaption>The model sits fourth in the chain, not first. Evidence is reconciled and the numbers are calculated deterministically before any narrative is generated — and the guardrail on that narrative is that it may not introduce a figure of its own.</figcaption>
+        </figure>
 
         <div class="recon">
-          <h4>How a document conflict is resolved</h4>
-          <p>Two source documents disagree about the same figure. Neither is silently trusted — the disagreement itself becomes an evidence record, flagged for verification, and the underwriting runs on a reviewer-selected assumption rather than whichever number was read first.</p>
+          <h4>How a document conflict is resolved — worked example</h4>
+          <p>Two source documents disagree about the same figure. Neither is silently trusted: the disagreement becomes an evidence record in its own right, weighted against source type, recency and completeness, and surfaced for review. Figures below are from the product's demonstration deal.</p>
           <div class="reconflow">
-            <div class="src"><span class="k">Seller OM · p.11</span><span class="v">96.0%</span><span class="m">occupancy</span></div>
+            <div class="src"><span class="k">Seller OM · p.11</span><span class="v">96.0%</span><span class="m">stated occupancy</span></div>
             <div class="vs">vs</div>
             <div class="src"><span class="k">Rent roll · p.2</span><span class="v">91.7%</span><span class="m">22 of 24 units occupied</span></div>
             <div class="vs">vs</div>
-            <div class="src"><span class="k">Market conditions</span><span class="v">—</span><span class="m">submarket comparables</span></div>
+            <div class="src"><span class="k">Market</span><span class="v">7.2%</span><span class="m">submarket vacancy</span></div>
             <div class="arrow" aria-hidden="true">→</div>
-            <div class="src out"><span class="k">Underwriting assumption</span><span class="v">reviewer-selected</span><span class="m">conflict logged · requires verification</span></div>
+            <div class="src out"><span class="k">Underwriting assumption</span><span class="v">92%</span><span class="m">reconciled · conflict logged · reviewable</span></div>
           </div>
         </div>
 
@@ -796,39 +825,73 @@ dl.summary dd ul{margin:0;padding-left:18px;display:flex;flex-direction:column;g
         </dl>
 
 
-        <div class="arch">
-          <div class="lyr"><span class="lbl">Request / trigger</span><div class="bits"><span class="bit">human</span><span class="bit">system</span><span class="bit">schedule</span><span class="bit">data event</span></div></div>
-          <div class="down" aria-hidden="true"></div>
-          <div class="lyr hot"><span class="lbl">Master orchestrator</span><div class="bits"><span class="bit">classify</span><span class="bit">route</span><span class="bit">coordinate</span><span class="bit">govern</span></div></div>
-          <div class="down" aria-hidden="true"></div>
-          <div class="coords">
-            <div class="coord"><b>Growth</b><span>revenue · research · pipeline · outreach</span></div>
-            <div class="coord"><b>Operations</b><span>internal process · workflow routing · administration</span></div>
-            <div class="coord"><b>Success &amp; intelligence</b><span>analysis · monitoring · synthesis · recommendations</span></div>
-            <div class="coord"><b>Client delivery</b><span>onboarding · project coordination · deliverables</span></div>
-          </div>
-          <div class="down" aria-hidden="true"></div>
-          <div class="lyr"><span class="lbl">Agent &amp; workflow registry</span><div class="bits"><span class="bit">200 reusable capability specifications</span><span class="bit">11 business functions</span></div></div>
-          <div class="down" aria-hidden="true"></div>
-          <div class="core">
-            <div class="corelbl">Shared layer — solved once, underneath</div>
-            <div class="lyr"><span class="lbl">Memory &amp; context</span></div>
-            <div class="lyr"><span class="lbl">Structured data</span></div>
-            <div class="lyr"><span class="lbl">Governance &amp; permissions</span></div>
-            <div class="lyr"><span class="lbl">Logging &amp; observability</span></div>
-            <div class="lyr"><span class="lbl">KPIs &amp; metrics</span></div>
-            <div class="lyr"><span class="lbl">Integration layer</span></div>
-          </div>
-          <div class="down" aria-hidden="true"></div>
-          <div class="split">
-            <div class="lyr det"><span class="lbl">Low-risk action</span><div class="bits"><span class="bit">executes within defined policy and permissions</span></div></div>
-            <div class="lyr gate"><span class="lbl">Approval required</span><div class="bits"><span class="bit">exceeds policy threshold</span><span class="bit">approve · edit · reject · escalate</span></div></div>
-          </div>
-          <div class="down" aria-hidden="true"></div>
-          <div class="lyr"><span class="lbl">Existing systems</span><div class="bits"><span class="bit">CRM</span><span class="bit">finance</span><span class="bit">marketing</span><span class="bit">email</span><span class="bit">calendar</span><span class="bit">docs</span><span class="bit">project management</span><span class="bit">analytics</span><span class="bit">databases</span></div></div>
-          <div class="down" aria-hidden="true"></div>
-          <div class="lyr base"><span class="lbl">Outcome / measurement → feedback loop returns to the orchestrator</span></div>
-        </div>
+        <figure class="figwrap">
+          <svg class="archsvg" viewBox="0 0 1160 990" role="img"
+               aria-label="Jidoka Core architecture. A request or trigger reaches a master orchestrator that classifies, routes, coordinates and governs. It fans out to four coordinators — growth, operations, success and intelligence, and client delivery — which draw on an agent and workflow registry of 200 reusable capability specifications and a shared layer providing memory and context, structured data, governance and permissions, logging and observability, KPIs, and integration. Actions split: low-risk actions execute automatically within policy, while actions exceeding policy thresholds require human review to approve, edit, reject or escalate. Both paths reach the existing business systems, then outcome and measurement, and a feedback loop returns to the orchestrator.">
+            <defs>
+              <marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+                <path d="M0 0 L8 4 L0 8 z" class="ah"/>
+              </marker>
+              <marker id="af" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+                <path d="M0 0 L8 4 L0 8 z" class="ahf"/>
+              </marker>
+            </defs>
+            
+  <path d="M620 70 V104" class="c" marker-end="url(#a)"/>
+  <path d="M620 166 V190 M224 190 H1013 M224 190 V214 M487 190 V214 M750 190 V214 M1013 190 V214" class="c"/>
+  <path d="M224 302 V322 M487 302 V322 M750 302 V322 M1013 302 V322 M224 322 H1013 M620 322 V346" class="c" marker-end="url(#a)"/>
+  <path d="M620 400 V444" class="c" marker-end="url(#a)"/>
+  <path d="M620 508 V534 M370 534 H870 M370 534 V560" class="c" marker-end="url(#a)"/>
+  <path d="M870 534 V560" class="c" marker-end="url(#a)"/>
+  <path d="M870 624 V642" class="c" marker-end="url(#a)"/>
+  <path d="M370 624 V700 M870 696 V700 M370 700 H870 M620 700 V730" class="c" marker-end="url(#a)"/>
+  <path d="M620 792 V828" class="c" marker-end="url(#a)"/>
+  <path d="M620 882 V904" class="c" marker-end="url(#a)"/>
+  <path d="M330 931 H48 V135 H270" class="fb" marker-end="url(#af)"/>
+
+            <rect x="430" y="16" width="380" height="54" rx="4" class="n"/>
+            <text x="620" y="40" text-anchor="middle" class="ttl">Request / trigger</text>
+            <text x="620" y="58" text-anchor="middle" class="sub">human · system · schedule · data event</text>
+
+            <rect x="270" y="104" width="700" height="62" rx="4" class="hot"/>
+            <text x="620" y="130" text-anchor="middle" class="ttl hotx">Master orchestrator</text>
+            <text x="620" y="150" text-anchor="middle" class="sub hotx">classify · route · coordinate · govern</text>
+
+            <rect x="100" y="214" width="249" height="88" rx="4" class="n"/><text x="224" y="246" text-anchor="middle" class="ttl">Growth</text><text x="224" y="266" text-anchor="middle" class="sub">revenue ·</text><text x="224" y="282" text-anchor="middle" class="sub">research · pipeline · outreach</text><rect x="363" y="214" width="249" height="88" rx="4" class="n"/><text x="487" y="246" text-anchor="middle" class="ttl">Operations</text><text x="487" y="266" text-anchor="middle" class="sub">internal process ·</text><text x="487" y="282" text-anchor="middle" class="sub">workflow routing · admin</text><rect x="626" y="214" width="249" height="88" rx="4" class="n"/><text x="750" y="246" text-anchor="middle" class="ttl">Success &amp; intelligence</text><text x="750" y="266" text-anchor="middle" class="sub">analysis ·</text><text x="750" y="282" text-anchor="middle" class="sub">monitoring · synthesis</text><rect x="889" y="214" width="249" height="88" rx="4" class="n"/><text x="1013" y="246" text-anchor="middle" class="ttl">Client delivery</text><text x="1013" y="266" text-anchor="middle" class="sub">onboarding ·</text><text x="1013" y="282" text-anchor="middle" class="sub">coordination · deliverables</text>
+
+            <rect x="330" y="346" width="580" height="54" rx="4" class="n"/>
+            <text x="620" y="370" text-anchor="middle" class="ttl">Agent &amp; workflow registry</text>
+            <text x="620" y="388" text-anchor="middle" class="sub">200 reusable capability specifications · 11 business functions</text>
+
+            <rect x="100" y="444" width="1040" height="64" rx="4" class="n"/>
+            <text x="100" y="436" text-anchor="start" class="eyebrow-t">SHARED LAYER</text>
+            <text x="186.66666666666669" y="482" text-anchor="middle" class="sub">Memory &amp; context</text><line x1="273" y1="444" x2="273" y2="508" class="div"/><text x="360.00000000000006" y="482" text-anchor="middle" class="sub">Structured data</text><line x1="447" y1="444" x2="447" y2="508" class="div"/><text x="533.3333333333334" y="482" text-anchor="middle" class="sub">Governance &amp; permissions</text><line x1="620" y1="444" x2="620" y2="508" class="div"/><text x="706.6666666666666" y="482" text-anchor="middle" class="sub">Logging &amp; observability</text><line x1="793" y1="444" x2="793" y2="508" class="div"/><text x="880.0" y="482" text-anchor="middle" class="sub">KPIs &amp; metrics</text><line x1="967" y1="444" x2="967" y2="508" class="div"/><text x="1053.3333333333335" y="482" text-anchor="middle" class="sub">Integration layer</text>
+
+            <rect x="180" y="560" width="380" height="64" rx="4" class="det"/>
+            <text x="370" y="586" text-anchor="middle" class="ttl">Low-risk action</text>
+            <text x="370" y="605" text-anchor="middle" class="sub">executes within policy and permissions</text>
+
+            <rect x="680" y="560" width="380" height="64" rx="4" class="gate"/>
+            <text x="870" y="586" text-anchor="middle" class="ttl gatex">Approval required</text>
+            <text x="870" y="605" text-anchor="middle" class="sub">exceeds policy threshold</text>
+
+            <rect x="680" y="642" width="380" height="54" rx="4" class="gate"/>
+            <text x="870" y="665" text-anchor="middle" class="ttl gatex">Human review</text>
+            <text x="870" y="683" text-anchor="middle" class="sub">approve · edit · reject · escalate</text>
+
+            <rect x="100" y="730" width="1040" height="62" rx="4" class="n"/>
+            <text x="100" y="722" text-anchor="start" class="eyebrow-t">EXISTING SYSTEMS</text>
+            <text x="157.77777777777777" y="766" text-anchor="middle" class="sub">CRM</text><line x1="216" y1="730" x2="216" y2="792" class="div"/><text x="273.3333333333333" y="766" text-anchor="middle" class="sub">Finance</text><line x1="331" y1="730" x2="331" y2="792" class="div"/><text x="388.88888888888886" y="766" text-anchor="middle" class="sub">Marketing</text><line x1="447" y1="730" x2="447" y2="792" class="div"/><text x="504.44444444444446" y="766" text-anchor="middle" class="sub">Email</text><line x1="562" y1="730" x2="562" y2="792" class="div"/><text x="620.0" y="766" text-anchor="middle" class="sub">Calendar</text><line x1="678" y1="730" x2="678" y2="792" class="div"/><text x="735.5555555555557" y="766" text-anchor="middle" class="sub">Docs</text><line x1="793" y1="730" x2="793" y2="792" class="div"/><text x="851.1111111111112" y="766" text-anchor="middle" class="sub">Project mgmt</text><line x1="909" y1="730" x2="909" y2="792" class="div"/><text x="966.6666666666667" y="766" text-anchor="middle" class="sub">Analytics</text><line x1="1024" y1="730" x2="1024" y2="792" class="div"/><text x="1082.2222222222222" y="766" text-anchor="middle" class="sub">Databases</text>
+
+            <rect x="330" y="828" width="580" height="54" rx="4" class="n"/>
+            <text x="620" y="852" text-anchor="middle" class="ttl">Outcome / measurement</text>
+            <text x="620" y="870" text-anchor="middle" class="sub">performance · results · business impact</text>
+
+            <rect x="330" y="904" width="580" height="54" rx="4" class="n"/>
+            <text x="620" y="936" text-anchor="middle" class="sub">Feedback loop — outcomes return to the orchestrator</text>
+          </svg>
+          <figcaption>Work enters once, is classified and routed by the orchestrator, and draws on capabilities and shared services that exist once rather than per system. Nothing above a policy threshold reaches a business system without a human approving it.</figcaption>
+        </figure>
 
         <div class="recon">
           <h4>A representative workflow — full pipeline operating review</h4>
