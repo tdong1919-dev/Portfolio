@@ -286,6 +286,24 @@ dl.summary dd ul{margin:0;padding-left:18px;display:flex;flex-direction:column;g
   background:var(--surface-2);}
 .corelbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
   padding:0 2px 2px;}
+/* ── Coordinator row ────────────────────────────────────────────────────── */
+.coords{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;}
+.coord{background:var(--surface);border:1px solid var(--rule);border-top:2px solid var(--accent);
+  border-radius:3px;padding:12px 13px;display:flex;flex-direction:column;gap:3px;}
+.coord b{font-family:var(--display);font-size:14.5px;font-weight:600;color:var(--ink);}
+.coord span{font-size:12.5px;color:var(--ink-2);line-height:1.4;}
+@media (max-width:860px){.coords{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media (max-width:520px){.coords{grid-template-columns:1fr;}}
+
+/* ── Workflow strip ─────────────────────────────────────────────────────── */
+.wf{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;}
+.wf .st{background:var(--surface-2);border:1px solid var(--rule-strong);border-radius:3px;padding:10px 11px;
+  display:flex;flex-direction:column;gap:3px;}
+.wf .st.out{border-color:var(--accent);background:var(--surface);}
+.wf .st b{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);}
+.wf .st span{font-size:12.5px;color:var(--ink-2);line-height:1.4;}
+@media (max-width:1000px){.wf{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media (max-width:600px){.wf{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -358,6 +376,7 @@ dl.summary dd ul{margin:0;padding-left:18px;display:flex;flex-direction:column;g
       <a href="#practice">How I work</a>
       <a href="#stack">Stack</a>
       <a href="#claims">Evidence &amp; provenance</a>
+      <a href="#learned">What I learned</a>
       <a href="#focus">Areas of focus</a>
     </nav>
 
@@ -778,19 +797,52 @@ dl.summary dd ul{margin:0;padding-left:18px;display:flex;flex-direction:column;g
 
 
         <div class="arch">
-          <div class="lyr"><span class="lbl">16 business systems</span><div class="bits"><span class="bit">Win customers</span><span class="bit">Serve clients</span><span class="bit">Retain &amp; grow</span><span class="bit">Run the business</span></div></div>
+          <div class="lyr"><span class="lbl">Request / trigger</span><div class="bits"><span class="bit">human</span><span class="bit">system</span><span class="bit">schedule</span><span class="bit">data event</span></div></div>
           <div class="down" aria-hidden="true"></div>
-          <div class="core">
-            <div class="corelbl">Jidoka Core — solved once, underneath</div>
-            <div class="lyr hot"><span class="lbl">Agent &amp; workflow registry</span><div class="bits"><span class="bit">200 specifications</span><span class="bit">11 business functions</span><span class="bit">indexed from disk at runtime</span></div></div>
-            <div class="lyr"><span class="lbl">Shared context &amp; memory</span><div class="bits"><span class="bit">organisational knowledge</span><span class="bit">structured state</span></div></div>
-            <div class="lyr"><span class="lbl">Governance</span><div class="bits"><span class="bit">permissions</span><span class="bit">logging</span><span class="bit">KPIs</span></div></div>
+          <div class="lyr hot"><span class="lbl">Master orchestrator</span><div class="bits"><span class="bit">classify</span><span class="bit">route</span><span class="bit">coordinate</span><span class="bit">govern</span></div></div>
+          <div class="down" aria-hidden="true"></div>
+          <div class="coords">
+            <div class="coord"><b>Growth</b><span>revenue · research · pipeline · outreach</span></div>
+            <div class="coord"><b>Operations</b><span>internal process · workflow routing · administration</span></div>
+            <div class="coord"><b>Success &amp; intelligence</b><span>analysis · monitoring · synthesis · recommendations</span></div>
+            <div class="coord"><b>Client delivery</b><span>onboarding · project coordination · deliverables</span></div>
           </div>
           <div class="down" aria-hidden="true"></div>
-          <div class="lyr gate"><span class="lbl">Human approval where required</span></div>
+          <div class="lyr"><span class="lbl">Agent &amp; workflow registry</span><div class="bits"><span class="bit">200 reusable capability specifications</span><span class="bit">11 business functions</span></div></div>
           <div class="down" aria-hidden="true"></div>
-          <div class="lyr"><span class="lbl">Existing systems</span><div class="bits"><span class="bit">CRM</span><span class="bit">email</span><span class="bit">documents</span><span class="bit">finance</span><span class="bit">APIs</span></div></div>
+          <div class="core">
+            <div class="corelbl">Shared layer — solved once, underneath</div>
+            <div class="lyr"><span class="lbl">Memory &amp; context</span></div>
+            <div class="lyr"><span class="lbl">Structured data</span></div>
+            <div class="lyr"><span class="lbl">Governance &amp; permissions</span></div>
+            <div class="lyr"><span class="lbl">Logging &amp; observability</span></div>
+            <div class="lyr"><span class="lbl">KPIs &amp; metrics</span></div>
+            <div class="lyr"><span class="lbl">Integration layer</span></div>
+          </div>
+          <div class="down" aria-hidden="true"></div>
+          <div class="split">
+            <div class="lyr det"><span class="lbl">Low-risk action</span><div class="bits"><span class="bit">executes within defined policy and permissions</span></div></div>
+            <div class="lyr gate"><span class="lbl">Approval required</span><div class="bits"><span class="bit">exceeds policy threshold</span><span class="bit">approve · edit · reject · escalate</span></div></div>
+          </div>
+          <div class="down" aria-hidden="true"></div>
+          <div class="lyr"><span class="lbl">Existing systems</span><div class="bits"><span class="bit">CRM</span><span class="bit">finance</span><span class="bit">marketing</span><span class="bit">email</span><span class="bit">calendar</span><span class="bit">docs</span><span class="bit">project management</span><span class="bit">analytics</span><span class="bit">databases</span></div></div>
+          <div class="down" aria-hidden="true"></div>
+          <div class="lyr base"><span class="lbl">Outcome / measurement → feedback loop returns to the orchestrator</span></div>
         </div>
+
+        <div class="recon">
+          <h4>A representative workflow — full pipeline operating review</h4>
+          <div class="wf">
+            <div class="st"><b>Request</b><span>full pipeline operating review</span></div>
+            <div class="st"><b>Context</b><span>CRM, goals, activity, account notes</span></div>
+            <div class="st"><b>Orchestrator</b><span>classify, route, assess approval needs</span></div>
+            <div class="st"><b>Agents</b><span>growth, operations, success &amp; intelligence</span></div>
+            <div class="st"><b>Actions</b><span>extract signals, summarise gaps, recommend next steps</span></div>
+            <div class="st"><b>Approval</b><span>review escalations and external actions</span></div>
+            <div class="st out"><b>Result</b><span>review packet, action list, KPI log</span></div>
+          </div>
+        </div>
+
 
         <div class="stages">
           <section class="stage">
@@ -922,6 +974,19 @@ dl.summary dd ul{margin:0;padding-left:18px;display:flex;flex-direction:column;g
         <div class="prose">
           <p><strong>Not claimed here:</strong> conversion rates, closed revenue or deal values. The systems above produced and qualified the pipeline; what closed at the end of it was recorded outside them, so no figure is asserted that this work can't evidence.</p>
         </div>
+      </section>
+
+      <section id="learned">
+        <div class="sec-head">
+          <div class="kicker">Closing</div>
+          <h2>From individual automations to organisational capabilities</h2>
+        </div>
+        <div class="prose">
+          <p>My earliest automation work optimised for speed of deployment and outcome per task. That was useful for validating whether a workflow created value at all — but once I saw how automation systems become interconnected, the design space expanded, and with it a clearer responsibility. <strong>Maintainability, security and governance had to become part of the architecture rather than afterthoughts.</strong></p>
+          <p>It is why I build complex systems around deterministic agent specifications instead of one general-purpose agent. Defined responsibilities, context requirements, approval rules, outputs and KPIs reduce ambiguity, and they lower the risk of hallucinated output and procedural error.</p>
+          <p>Building Jidoka Core changed how I think about applied AI. The most important part of an agentic system is the human intention behind it. Connecting a model to APIs is comparatively straightforward; the harder work is understanding <strong>where AI belongs inside an organisation</strong> — what context it needs, what it should and should not be allowed to do, who owns each process, and how repeatable modules can be governed, secured, adapted and scaled.</p>
+        </div>
+        <p class="pull">My goal has shifted from building individual automations to building reliable organisational capabilities, with feedback loops that continuously teach both the AI systems and the people using them.</p>
       </section>
 
       <section id="focus">
