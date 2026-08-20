@@ -353,7 +353,7 @@ footer{margin-top:24px;padding-top:26px;border-top:1px solid var(--rule-strong);
           <article class="build">
             <div class="tag">Scoring · pure module</div>
             <h3>Two scores, every point explained</h3>
-            <p>Each lead is parsed field by field — blanks stay blank, nothing is inferred — then scored twice. <strong>Investor quality 0–100</strong> across seven weighted components: stated range 25, crypto and RWA relevance 20, real-estate relevance 15, professional credibility 15, contact completeness 10, message quality 10, prior engagement 5. <strong>Spam risk 0–100</strong> additively, where every point is attributable: gibberish name +25, gibberish message +20, disposable email domain +20, hosting or Tor IP range +15, no reachable handle at all +10. The two together resolve to one of eight segments. No network, no model calls — the classification is reproducible and unit-testable.</p>
+            <p>Each lead is parsed field by field — blanks stay blank, nothing is inferred — then scored twice. <strong>Investor quality 0–100</strong> across seven weighted components: stated range 25, crypto and RWA relevance 20, real-estate relevance 15, professional credibility 15, contact completeness 10, message quality 10, prior engagement 5. <strong>Spam risk 0–100</strong> additively, where every point is attributable: gibberish name +25, gibberish message +20, disposable email domain +20, hosting or Tor IP range +15, no reachable handle at all +10. The two together resolve to one of eight segments. No network, no model calls — the classification is reproducible and unit-testable. Across the 2,225 leads the system captured, roughly <strong>400 resolved to bot or disqualified segments</strong> — close to one in five of everything inbound, held back from a person's attention without a human ever reading it.</p>
             <div class="files">score_investor_quality() · score_spam_risk()</div>
           </article>
 
@@ -632,6 +632,7 @@ footer{margin-top:24px;padding-top:26px;border-top:1px solid var(--rule-strong);
             <thead><tr><th>Claim</th><th>Where it comes from</th></tr></thead>
             <tbody>
               <tr><td><strong>2,225 leads captured</strong></td><td class="mono">The platform's sequential lead counter, shown in the redacted exhibit above at Lead ID #2225 (August 2026). The deduplicated CRM row count is available on request.</td></tr>
+              <tr><td><strong>~400 of 2,225 filtered as bot or disqualified</strong></td><td class="mono">Segment counts in the Aurumverse lead table</td></tr>
               <tr><td><strong>200 agent specifications</strong></td><td class="mono">Jidoka Core's specification library — counted by the catalog's own file pattern across 11 category directories</td></tr>
               <tr><td><strong>16 business systems across 4 stages</strong></td><td class="mono">Jidoka Group's system taxonomy, enumerated in the Jidoka Core section above. The four stage names are the delivery lanes used throughout the platform codebase.</td></tr>
               <tr><td><strong>10 autonomous agents</strong></td><td class="mono">agent.py — agents 01–10, each a named function</td></tr>
