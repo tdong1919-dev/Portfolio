@@ -202,6 +202,16 @@ td strong{font-weight:600;color:var(--ink);}
 .journey-step p{font-size:13px;line-height:1.55;color:var(--ink-2);}
 .journey-step .num{font:11px var(--mono);color:var(--brass);letter-spacing:.12em;}
 @media(max-width:720px){.journey-grid{grid-template-columns:1fr;}}
+.experience-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0;}
+.experience-card{background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:19px;min-width:0;}
+.experience-card h3{font-size:17px;line-height:1.4;margin:8px 0;}
+.experience-card p{font-size:14px;line-height:1.65;color:var(--ink-2);}
+.experience-card .eyebrow{font-size:11px;}
+.experience-flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:20px 0;}
+.experience-flow div{background:var(--surface);border:1px solid var(--rule-strong);border-top:3px solid var(--brass);border-radius:4px;padding:15px 10px;font-size:13px;line-height:1.45;font-weight:600;min-width:0;}
+.experience-flow small{display:block;font-size:11px;line-height:1.5;color:var(--ink-2);font-weight:400;margin-top:6px;}
+@media(max-width:800px){.experience-flow{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:600px){.experience-grid{grid-template-columns:1fr;}.experience-flow{grid-template-columns:1fr;}}
 
 ul.ticks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;max-width:68ch;}
 ul.ticks li{padding-left:26px;position:relative;color:var(--ink-2);font-weight:400;line-height:1.6;}
@@ -468,14 +478,14 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
 <div class="shell">
 
   <header class="masthead">
-    <h1>Beauty industry insight. <span class="amp">Systems that connect.</span></h1>
-    <p class="standfirst">I opened my first beauty studio at 18 and went on to operate three locations simultaneously. After more than a decade building in beauty, I sold the salon business to pursue a new passion: building the marketing technology, customer data workflows and AI systems that help businesses reach and serve people better.</p>
-    <p class="heroline">My focus: translate what customers and operators need into practical, governed product and integration decisions—without confusing a compelling prototype with a production deployment.</p>
+    <h1>Beauty industry insight. <span class="amp">Marketing technology that connects.</span></h1>
+    <p class="standfirst">I opened my first beauty studio at 18 and grew to three locations operating simultaneously. That firsthand understanding of customers led me from beauty operations into commerce, marketing leadership and hands-on customer data platforms. Today I build AI-enabled marketing products that connect insight to action.</p>
+    <p class="heroline">My perspective spans the full journey: understanding customers, designing lifecycle campaigns, integrating the data behind them and shipping the systems that make them work.</p>
     <div class="byline">
       <div class="who">
         <b>Crystal Thuy Dong</b>
         <span>Beauty &amp; MarTech | AI Product &amp; Systems</span>
-        <span class="spec">Customer journeys | Data architecture | Integrations | Applied AI</span>
+        <span class="spec">Twilio Segment CDP | Lifecycle platforms | Integrations | Applied AI</span>
       </div>
       <div class="links">
         <a href="https://www.linkedin.com/in/crystalthuydong" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -507,7 +517,7 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
       <div class="rail-head">Career &amp; product story</div>
       <a href="#beauty">From operator to builder</a>
       <a href="#scout">Scout · featured product</a>
-      <a href="#cdp">Customer data perspective</a>
+      <a href="#cdp">Customer data &amp; lifecycle platforms</a>
       <a href="#archive">Technical case-study archive</a>
     </nav>
 
@@ -534,11 +544,11 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
 
       <section id="beauty">
         <div class="sec-head">
-          <div class="kicker">Chapter 01 · Founder → Operator → Strategist</div>
+          <div class="kicker">Chapter 01 · Founder → Operator → Marketing leader</div>
           <h2>From the treatment room to the customer journey</h2>
           <p>I built and led three beauty studio locations, then moved toward marketing, education and technology because I wanted to improve how businesses connect with people at scale.</p>
         </div>
-        <p class="story-intro">The customer experience came first. The systems thinking came from trying to make it better.</p>
+        <p class="story-intro">The customer experience came first. I learned the technology to improve it at scale.</p>
         <div class="beauty-hero">
           <span class="eyebrow">The intersection I work at</span>
           <h3>A brand experience is one continuous relationship—even when its data lives in separate tools.</h3>
@@ -553,14 +563,17 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
         </div>
         <details class="disc"><summary>Watch: speaking at an industry conference · 50 seconds</summary><div class="discbody"><p>A candid clip from a lash-industry conference, documenting my experience presenting to an audience of beauty professionals.</p><video controls preload="none" playsinline poster="assets/lash-conference.webp" style="display:block;width:min(100%,420px);max-height:640px;background:#111;border-radius:4px" aria-label="Crystal speaking at a lash industry conference"><source src="assets/conference-speaking.mp4" type="video/mp4">Your browser does not support embedded video.</video></div></details>
         <div class="builds">
-          <article class="build feature"><span class="tag">Featured · Implemented · Beauty e-commerce</span><h3>SocoLashes &amp; Soco Lashes Academy</h3><p>During a three-year tenure with SocoLashes, I worked across beauty education, commerce and digital customer journeys. The parent business generated <strong>$200K+ in monthly revenue</strong>, primarily through Shopify and conventions, and experienced <strong>40% year-over-year growth</strong> during my tenure. These are business-wide figures—not revenue attributable to the Academy or my funnel.</p><p>For Soco Lashes Academy, I led the design and execution of an implemented online education sales funnel with the team: prospect email/phone capture, course checkout, cart-abandonment payment-plan offers, advanced-course and one-on-one upsells, and post-purchase community engagement. Academy-specific revenue and conversion figures were not separately available.</p><div class="files">Role: digital funnel strategy, design &amp; team execution · Shopify-led commerce context · lifecycle marketing</div></article>
-          <article class="build"><span class="tag">Industry foundation · Business operations</span><h3>Bare Studios &amp; Balanced Beauty</h3><p>Salon ownership and hands-on beauty services informed my understanding of consultations, booking, rebooking, retention, service consistency and the realities of a small team's workflow. This is domain experience, not a claim of an enterprise CDP deployment.</p><div class="files">Lens: customer experience · service operations · retention</div></article>
-          <article class="build"><span class="tag">Marketing systems · Product concept</span><h3>Autom8 IG</h3><p>Designed an AI-assisted Instagram/Facebook comment and DM workflow concept with brand tone, trigger-based responses and human-review boundaries. A relevant example of translating conversational touchpoints into actionable customer journeys.</p><div class="files">Lens: social signals · workflow triggers · brand voice · escalation</div></article>
+          <article class="build feature"><span class="tag">Featured · Beauty e-commerce &amp; education</span><h3>SocoLashes &amp; Soco Lashes Academy</h3><p>During my three-year tenure, SocoLashes grew 40% year over year and generated more than <strong>$200K in monthly company-wide revenue</strong>, driven primarily by Shopify commerce and conventions. I worked across beauty education, commerce and digital customer journeys.</p><p>For Soco Lashes Academy, I led the design and team execution of its online education funnel: lead capture, course checkout, cart-abandonment payment-plan offers, advanced-course and one-on-one upsells, and post-purchase community engagement.</p><div class="files">Role: digital funnel strategy, design &amp; team execution · Shopify commerce · lifecycle marketing</div></article>
+          <article class="build"><span class="tag">Industry foundation · Business operations</span><h3>Bare Studios &amp; Balanced Beauty</h3><p>Salon ownership and hands-on beauty services shaped my approach to consultations, booking, rebooking, retention, service consistency and the realities of a growing team's workflow.</p><div class="files">Expertise: customer experience · service operations · retention</div></article>
+          <article class="build"><span class="tag">Implemented · Active JIDOKA marketing product</span><h3>JIDOKA Marketing OS</h3><p>Designed and built a connected marketing workflow that aggregates research and trend signals, develops content ideas, filming scripts and captions, and supports automated social publishing. I actively use Marketing OS to market JIDOKA Scout—connecting market insight, creative production and distribution in one operating process.</p><div class="files">My role: product direction, workflow architecture &amp; implementation · Research → Strategy → Content → Publishing</div></article>
           <article class="build"><span class="tag">Applied AI · Integration architecture</span><h3>JIDOKA Scout &amp; Core</h3><p>Scout focuses on identifying relevant outreach prospects; Core connects work across existing business tools. Together, they illustrate how I think about source data, routing, records, handoffs and governed actions—not isolated AI prompts.</p><div class="files">Lens: structured records · APIs · orchestration · permission gates</div></article>
         </div>
-        <div class="note"><h4>Selected earlier creative and growth work</h4><p>My marketing archive includes beauty and wellness promotional video examples for Lashes by Katie &amp; Skincare and CCF Plastic Surgery, e-commerce creative for Beyoutifulwandz, Soco Lashes Academy student testimonials, and content concepts for Wisdom Tea. These demonstrate the breadth of my campaign and content exposure; no campaign-level sales lift or attribution is claimed.</p></div>
+        <div class="note"><h4>Marketing OS · The product in use</h4><p>I use JIDOKA Marketing OS to run marketing work for Scout today. The system links research and trend signals to content ideas, filming scripts, captions and automated social publishing, while keeping editorial direction in human hands.</p>
+          <div class="experience-flow" aria-label="JIDOKA Marketing OS workflow"><div>01 · Research<small>Aggregate relevant information and trend signals</small></div><div>02 · Interpret<small>Identify audience needs and promising angles</small></div><div>03 · Plan<small>Develop content concepts and production briefs</small></div><div>04 · Produce<small>Draft filming scripts and captions</small></div><div>05 · Publish<small>Automated social distribution and review</small></div></div>
+        </div>
+        <div class="note"><h4>Selected earlier creative and growth work</h4><p>My marketing archive spans beauty and wellness promotional videos for Lashes by Katie &amp; Skincare and CCF Plastic Surgery, e-commerce creative for Beyoutifulwandz, Soco Lashes Academy student testimonials, and content concepts for Wisdom Tea.</p></div>
         <div class="builds">
-          <article class="build"><span class="tag">Strategic proposal · Not implemented</span><h3>BTCC · Acquisition &amp; Lead Intelligence Framework</h3><p>Prepared a proposed acquisition framework for a cryptocurrency exchange centered on behavior-based ideal customer profiles, qualified trader and creator segments, five-level lead scoring, KOL prioritization and measurement beyond signups—toward funded accounts, activity and retention. <strong>The proposal did not proceed to implementation</strong>; it is presented as a strategy artifact, not a client deployment or delivered result.</p><div class="files">Lens: ICP research · behavioral segmentation · lead quality · lifecycle measurement</div></article>
+          <article class="build"><span class="tag">Strategic proposal</span><h3>BTCC · Acquisition &amp; Lead Intelligence Framework</h3><p>Developed an acquisition strategy proposal for a cryptocurrency exchange centered on behavior-based ideal customer profiles, qualified trader and creator segments, five-level lead scoring, KOL prioritization and measurement beyond signups—toward funded accounts, activity and retention.</p><div class="files">Expertise: ICP research · behavioral segmentation · lead quality · lifecycle measurement</div></article>
         </div>
         <div class="note"><h4>My product lens</h4><p>For a beauty brand, the goal is not merely more automation. It is a trusted, permission-aware customer view that can support acquisition, service, education, replenishment and retention—with clear ownership of identity, consent, data quality and measurable outcomes.</p></div>
       </section>
@@ -578,7 +591,7 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
           <details class="scout-node"><summary><span class="step">05 · CONNECT</span>Handoff &amp; feedback</summary><p>Users review destinations and connect operational CRM workflows. They can rate leads, give reasons, and revise or clear ratings. Applicable feedback informs later searches for the same workspace and approved audience.</p></details>
         </div>
         <div class="divider">02 · Technical architecture · founder-described design</div>
-        <p class="scout-caption">Scout combines specialized AI stages with deterministic orchestration and validation. These are founder-described functional responsibilities, not a claim of eight independently autonomous bots. The stable controls govern workspace isolation, permissions, source evidence, budgets, retries, duplicates and approval.</p>
+        <p class="scout-caption">Scout coordinates eight specialized functional roles through deterministic orchestration and validation. Its stable controls govern workspace isolation, permissions, source evidence, budgets, retries, duplicates and approval.</p>
         <div class="scout-track">
           <details class="scout-node"><summary><span class="step">DATA LAYER</span>Gather &amp; normalize</summary><p>Source adapters gather public business evidence and contact-route information. Structured records preserve source, timestamp and provenance for review and downstream use.</p></details>
           <details class="scout-node"><summary><span class="step">RULES LAYER</span>Deterministic controls</summary><p>Explicit validation, eligibility, scoring and routing rules establish what may advance. Model-generated prose is not the authority for permissions or workflow state.</p></details>
@@ -597,16 +610,23 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
           <article class="scout-role"><h4>Workflow Orchestrator</h4><p>Coordinates checkpoints, budgets, retries, duplicate prevention and delivery controls.</p></article>
           <article class="scout-role"><h4>Feedback Memory &amp; Calibrator</h4><p>Stores fit ratings and reasons, then supplies applicable examples and preferences to future searches.</p></article>
         </div>
-        <div class="note"><h4>Implemented feedback boundary</h4><p>Feedback does not itself start a new search, authorize outreach, rewrite agent code, retrain model weights or override required audience criteria. It enriches the context of subsequent searches within the same workspace and approved audience, while deterministic rules remain in control.</p></div>
-        <div class="note"><h4>Next development phase · Proposed, not deployed</h4><p>An evaluation-driven improvement process could generate candidate research strategies or prompt revisions, compare them against independent evaluation cases and release only validated improvements with version history and rollback. This is a planned capability—not a current production feature.</p></div>
+        <div class="note"><h4>Feedback-guided learning</h4><p>Customer fit ratings and reasons enrich the research context of subsequent searches within the same workspace and approved audience. Deterministic controls continue to govern eligibility, permissions and outreach approval.</p></div>
+        <div class="note"><h4>On the roadmap · Evaluation-driven optimization</h4><p>The next planned phase will evaluate candidate research strategies and prompt revisions against independent test cases, with version history and rollback for validated improvements.</p></div>
         </div></details>
-        <div class="note"><h4>Why this matters for marketing technology</h4><p>Scout demonstrates the same product judgment required in lifecycle and customer-data systems: source quality, a stable record model, explainable segmentation, governed activation, integration ownership and measurable feedback. It is a prospect-intelligence product, not an enterprise CDP deployment.</p></div>
+        <div class="note"><h4>Why this matters for marketing technology</h4><p>Scout brings together core marketing technology disciplines: source quality, structured data, explainable segmentation, governed activation, operational CRM integrations and measurable feedback.</p></div>
         <p class="demolink"><a href="https://scout.jidokagroup.com/" target="_blank" rel="noopener noreferrer">Explore the Scout product ↗</a></p>
       </section>
 
       <section id="cdp">
-        <div class="sec-head"><div class="kicker">Chapter 03 · Customer data &amp; marketing activation</div><h2>From disconnected touchpoints to a trusted customer view</h2><p>For a beauty brand, the challenge is turning commerce, campaign, service and engagement signals into useful, consent-aware customer experiences. My architecture exercise maps how ingestion, identity, segmentation and activation should work together. It is illustrative—not a claim of enterprise CDP implementation.</p></div>
-        <details class="portfolio-expand"><summary>Explore my proposed beauty CDP reference architecture</summary><div class="expand-inner">
+        <div class="sec-head"><div class="kicker">Chapter 03 · Hands-on MarTech &amp; customer data</div><h2>From customer data to lifecycle activation</h2><p>My experience includes hands-on configuration across customer data, CRM, commerce and engagement platforms. I have connected tracking, identity and audiences to practical marketing workflows—not just drafted reference architectures.</p></div>
+        <div class="experience-grid" aria-label="Implemented customer data and marketing platform experience">
+          <article class="experience-card"><span class="eyebrow">CDP · Customer data</span><h3>Twilio Segment</h3><p>Personally configured data sources, destinations, tracking events, identity resolution and audience segments. Also worked with Twilio communications APIs for connected messaging workflows.</p></article>
+          <article class="experience-card"><span class="eyebrow">Engagement · Lifecycle automation</span><h3>Klaviyo &amp; GoHighLevel</h3><p>Personally configured customer segments, automated sequences, abandoned-cart recovery and operational workflows, translating audience behavior into customer-facing journeys.</p></article>
+          <article class="experience-card"><span class="eyebrow">Commerce · Beauty industry</span><h3>Shopify · SocoLashes</h3><p>Configured customer segments, commerce automations, checkout abandonment and lifecycle workflows within SocoLashes' Shopify-led e-commerce operations.</p></article>
+          <article class="experience-card"><span class="eyebrow">CRM · Measurement · Integration</span><h3>Salesforce, analytics &amp; APIs</h3><p>Used Salesforce CRM as Head of Marketing for Chevy Chase Facial Plastic Surgery. Additional hands-on tools include Google Analytics, Meta's Conversions API and n8n for measurement, data handoffs and automation.</p></article>
+        </div>
+        <div class="note"><h4>The product work behind the platforms</h4><p>Customer and business requirements → event and audience definitions → platform configuration and integration → lifecycle activation → measurement and iteration. This is the common thread linking my beauty-commerce work with Scout and JIDOKA Marketing OS.</p></div>
+        <details class="portfolio-expand"><summary>Optional deep dive · Beauty CDP reference architecture</summary><div class="expand-inner">
         <div class="journey-grid">
           <div class="journey-step"><span class="num">01 · SIGNALS</span><b>Collect with purpose</b><p>Commerce transactions, bookings, consented customer profiles, campaign events and customer-service interactions. Document source, timestamp, permitted use and owner.</p></div>
           <div class="journey-step"><span class="num">02 · IDENTITY</span><b>Resolve &amp; govern</b><p>Map identifiers into customer profiles, deduplicate safely, manage consent, define schema and event taxonomy, and monitor match rates and data freshness.</p></div>
