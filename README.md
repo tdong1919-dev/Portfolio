@@ -1,10 +1,18 @@
 # Portfolio — Crystal Thuy Dong
 
-Selected work as an AI Systems Architect. One self-contained page, no build step
+Selected work at the intersection of beauty operations, customer data,
+marketing technology and applied AI architecture. One self-contained page, no build step
 and no dependencies: `index.html` carries its own CSS and its only image inline
 as a data URI, so it renders correctly from any static host.
 
 ## Case studies
+
+The portfolio now opens with beauty-industry operating context (Bare Studios,
+Balanced Beauty, Autom8 IG, JIDOKA Scout/Core) and an explicitly illustrative
+customer data platform architecture. The CDP journey is a reference design,
+not a claim of enterprise CDP implementation. This positioning supports
+MarTech, AI product ownership and customer-data platform applications while
+preserving the original technical case studies below.
 
 1. **REIDE — Real Estate Investment Decision Engine.** Institutional acquisitions
    platform: a sixteen-stage workflow from deal intake to investment-committee
