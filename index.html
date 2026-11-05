@@ -167,6 +167,14 @@ td strong{font-weight:600;color:var(--ink);}
 .chip.on{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
 .beauty-hero{background:linear-gradient(130deg,var(--accent-soft),var(--surface) 66%);border:1px solid var(--rule-strong);border-left:4px solid var(--brass);padding:26px;border-radius:4px;display:grid;gap:14px;}
 .beauty-hero h3{font-family:var(--quote);font-size:clamp(26px,3.3vw,39px);line-height:1.2;font-weight:400;}
+.scout-track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:18px 0 26px;}
+.scout-node{background:var(--surface);border:1px solid var(--rule-strong);border-top:3px solid var(--brass);padding:15px 13px;border-radius:4px;min-width:0;}
+.scout-node summary{cursor:pointer;font-weight:600;line-height:1.4;font-size:14px;}
+.scout-node .step{display:block;color:var(--brass);font:11px var(--mono);margin-bottom:9px;letter-spacing:.06em;}
+.scout-node p{font-size:12.5px;line-height:1.55;color:var(--ink-2);margin-top:12px;}
+.scout-caption{font-size:13.5px;color:var(--ink-2);line-height:1.6;max-width:77ch;}
+@media(max-width:1000px){.scout-track{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:540px){.scout-track{grid-template-columns:1fr;}}
 .story-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0;}
 .story-gallery figure{background:var(--surface);border:1px solid var(--rule);border-radius:4px;overflow:hidden;}
 .story-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
@@ -495,6 +503,7 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
     <nav class="rail" aria-label="Contents">
       <div class="rail-head">Industry &amp; Data</div>
       <a href="#beauty">Beauty + MarTech</a>
+      <a href="#scout">Scout product architecture</a>
       <a href="#cdp">CDP reference design</a>
       <div class="rail-head">Case Study 01</div>
       <a href="#aurum">Fintech AI Brain</a>
@@ -564,6 +573,30 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
         </div>
         <p class="demolink"><a href="https://deploy-preview-628--fancy-cuchufli-240b34.netlify.app/scout">Explore a Scout product preview →</a></p>
         <div class="note"><h4>My product lens</h4><p>For a beauty brand, the goal is not merely more automation. It is a trusted, permission-aware customer view that can support acquisition, service, education, replenishment and retention—with clear ownership of identity, consent, data quality and measurable outcomes.</p></div>
+      </section>
+
+      <section id="scout">
+        <div class="sec-head"><div class="kicker">Featured product · JIDOKA Scout</div><h2>From audience definition to evidence-backed outreach</h2><p>Scout connects a marketing problem—finding the right next customer or partner—to research, qualification, message preparation and downstream operations. The live demo exposes the user journey; the architecture below separates visible product behavior from the system design I am developing.</p></div>
+        <div class="beauty-hero"><span class="eyebrow">The product decision</span><h3>More leads are not the objective. Better-qualified opportunities, with accountable next steps, are.</h3><p class="standfirst">I approach prospecting as a connected data product: define who matters, preserve evidence for why a match qualifies, apply predictable rules before generative assistance, keep a person in control of outreach and carry results into existing business systems.</p><div class="chips"><span class="chip on">B2B prospect discovery</span><span class="chip on">Evidence-based fit scoring</span><span class="chip on">Outreach drafting</span><span class="chip on">CRM / Sheets handoff</span><span class="chip on">Human approval</span><span class="chip on">Feedback signals</span></div></div>
+        <div class="divider">01 · Product and marketing funnel · visible in the live demo</div>
+        <div class="scout-track">
+          <details class="scout-node"><summary><span class="step">01 · DEFINE</span>Audience &amp; offer</summary><p>A business identifies the prospective customer or partnership segment, location and company preferences. A focused five-lead first round makes fit easy to evaluate.</p></details>
+          <details class="scout-node"><summary><span class="step">02 · RESEARCH</span>Opportunity discovery</summary><p>Scout researches matching businesses and contact routes, assembling prospect profiles and source evidence rather than just a raw list of names.</p></details>
+          <details class="scout-node"><summary><span class="step">03 · QUALIFY</span>Fit &amp; timing evidence</summary><p>The review surface shows fit, urgency and timing scores with evidence confidence and source details. A score signals relevance, not confirmed intent to buy.</p></details>
+          <details class="scout-node"><summary><span class="step">04 · ACTIVATE</span>Draft &amp; approve</summary><p>Scout prepares a personalized outreach draft that a user can inspect and edit. External outreach remains subject to the appropriate review and authorization.</p></details>
+          <details class="scout-node"><summary><span class="step">05 · CONNECT</span>Handoff &amp; feedback</summary><p>Users mark lead fit and choose where prospects go next. Google Sheets has a direct setup path; other CRM connections require account-specific configuration.</p></details>
+        </div>
+        <div class="divider">02 · Technical architecture · founder-described design</div>
+        <p class="scout-caption">These layers explain the intended separation of responsibilities within Scout's deterministic, agent-assisted architecture. The public demo does not independently verify each internal service or an automatically self-training model.</p>
+        <div class="scout-track">
+          <details class="scout-node"><summary><span class="step">DATA LAYER</span>Gather &amp; normalize</summary><p>Source adapters gather public business evidence and contact-route information. Structured records preserve source, timestamp and provenance for review and downstream use.</p></details>
+          <details class="scout-node"><summary><span class="step">RULES LAYER</span>Deterministic controls</summary><p>Explicit validation, eligibility, scoring and routing rules establish what may advance. Model-generated prose is not the authority for permissions or workflow state.</p></details>
+          <details class="scout-node"><summary><span class="step">AGENT LAYER</span>Specialist assistance</summary><p>Task-bounded research, synthesis and outreach-drafting agents handle language-heavy work around structured inputs, with a coordinated review boundary.</p></details>
+          <details class="scout-node"><summary><span class="step">ACTION LAYER</span>Review &amp; integrate</summary><p>Approved prospects and drafts can flow into the business's next system. The integration contract, field mapping, permissions and external-send approval vary by destination.</p></details>
+          <details class="scout-node"><summary><span class="step">LEARNING LAYER</span>Record outcomes</summary><p>Lead-fit ratings and downstream disposition provide a feedback signal for refining targeting criteria. Whether scoring adjusts automatically is a separate implementation question.</p></details>
+        </div>
+        <div class="note"><h4>Why this matters for marketing technology</h4><p>Scout demonstrates the same product judgment required in lifecycle and customer-data systems: source quality, a stable record model, explainable segmentation, governed activation, integration ownership and measurable feedback. It is a prospect-intelligence product, not an enterprise CDP deployment.</p></div>
+        <p class="demolink"><a href="https://scout.jidokagroup.com/">Visit Scout →</a> &nbsp; <a href="https://jidokagroup.com/owner/scout?demo=1&amp;view=discover">Explore the fictional interactive demo →</a></p>
       </section>
 
       <section id="cdp">
