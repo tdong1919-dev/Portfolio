@@ -173,6 +173,12 @@ td strong{font-weight:600;color:var(--ink);}
 .scout-node .step{display:block;color:var(--brass);font:11px var(--mono);margin-bottom:9px;letter-spacing:.06em;}
 .scout-node p{font-size:12.5px;line-height:1.55;color:var(--ink-2);margin-top:12px;}
 .scout-caption{font-size:13.5px;color:var(--ink-2);line-height:1.6;max-width:77ch;}
+.scout-team{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:17px 0 25px;}
+.scout-role{background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:17px;}
+.scout-role h4{font-size:14px;line-height:1.35;margin-bottom:8px;color:var(--ink);}
+.scout-role p{font-size:12.5px;line-height:1.55;color:var(--ink-2);}
+@media(max-width:900px){.scout-team{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:540px){.scout-team{grid-template-columns:1fr;}}
 @media(max-width:1000px){.scout-track{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:540px){.scout-track{grid-template-columns:1fr;}}
 .story-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0;}
@@ -584,17 +590,30 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
           <details class="scout-node"><summary><span class="step">02 · RESEARCH</span>Opportunity discovery</summary><p>Scout researches matching businesses and contact routes, assembling prospect profiles and source evidence rather than just a raw list of names.</p></details>
           <details class="scout-node"><summary><span class="step">03 · QUALIFY</span>Fit &amp; timing evidence</summary><p>The review surface shows fit, urgency and timing scores with evidence confidence and source details. A score signals relevance, not confirmed intent to buy.</p></details>
           <details class="scout-node"><summary><span class="step">04 · ACTIVATE</span>Draft &amp; approve</summary><p>Scout prepares a personalized outreach draft that a user can inspect and edit. External outreach remains subject to the appropriate review and authorization.</p></details>
-          <details class="scout-node"><summary><span class="step">05 · CONNECT</span>Handoff &amp; feedback</summary><p>Users mark lead fit and choose where prospects go next. Operational CRM integrations support connected handoffs, with account-specific configuration where required. Feedback also informs subsequent scoring.</p></details>
+          <details class="scout-node"><summary><span class="step">05 · CONNECT</span>Handoff &amp; feedback</summary><p>Users review destinations and connect operational CRM workflows. They can rate leads, give reasons, and revise or clear ratings. Applicable feedback informs later searches for the same workspace and approved audience.</p></details>
         </div>
         <div class="divider">02 · Technical architecture · founder-described design</div>
-        <p class="scout-caption">These layers explain the founder-described separation of responsibilities within Scout's deterministic, agent-assisted architecture. The feedback loop and CRM integrations are reported as operational; the public demo does not independently expose every internal agent implementation.</p>
+        <p class="scout-caption">Scout combines specialized AI stages with deterministic orchestration and validation. These are founder-described functional responsibilities, not a claim of eight independently autonomous bots. The stable controls govern workspace isolation, permissions, source evidence, budgets, retries, duplicates and approval.</p>
         <div class="scout-track">
           <details class="scout-node"><summary><span class="step">DATA LAYER</span>Gather &amp; normalize</summary><p>Source adapters gather public business evidence and contact-route information. Structured records preserve source, timestamp and provenance for review and downstream use.</p></details>
           <details class="scout-node"><summary><span class="step">RULES LAYER</span>Deterministic controls</summary><p>Explicit validation, eligibility, scoring and routing rules establish what may advance. Model-generated prose is not the authority for permissions or workflow state.</p></details>
           <details class="scout-node"><summary><span class="step">AGENT LAYER</span>Specialist assistance</summary><p>Task-bounded research, synthesis and outreach-drafting agents handle language-heavy work around structured inputs, with a coordinated review boundary.</p></details>
           <details class="scout-node"><summary><span class="step">ACTION LAYER</span>Review &amp; integrate</summary><p>Operational CRM integrations carry approved prospect records into connected workflows. Field mapping, permissions, setup and external-send approval remain destination-specific.</p></details>
-          <details class="scout-node"><summary><span class="step">LEARNING LAYER</span>Adaptive scoring</summary><p>Lead-fit feedback automatically adjusts subsequent scoring while the underlying ratings and outcomes remain stored for human analysis, auditing and further optimization.</p></details>
+          <details class="scout-node"><summary><span class="step">CONTEXT LAYER</span>Feedback-guided search</summary><p>Applicable ratings, reasons and preferences automatically enter the research context when a later search starts for the same workspace and approved audience. Ratings are retained for human analysis and optimization.</p></details>
         </div>
+        <div class="divider">03 · Functional agent team · roles within one governed system</div>
+        <div class="scout-team">
+          <article class="scout-role"><h4>Business &amp; Audience Analyst</h4><p>Turns the business's offering, target customer or partner and constraints into an editable research brief.</p></article>
+          <article class="scout-role"><h4>Discovery Researcher</h4><p>Finds candidate businesses in accessible public-web sources and gathers supporting evidence.</p></article>
+          <article class="scout-role"><h4>Fit &amp; Evidence Verifier</h4><p>Checks audience, geography and exclusions, retaining supporting sources and uncertainty.</p></article>
+          <article class="scout-role"><h4>Escalation Reviewer</h4><p>Provides stronger-model review for selected cases that remain unresolved.</p></article>
+          <article class="scout-role"><h4>Contact Researcher</h4><p>Validates evidence connecting a relevant person or business contact route to each candidate.</p></article>
+          <article class="scout-role"><h4>Outreach Writer</h4><p>Drafts a grounded first-touch message based on the approved offer and verified observations.</p></article>
+          <article class="scout-role"><h4>Workflow Orchestrator</h4><p>Coordinates checkpoints, budgets, retries, duplicate prevention and delivery controls.</p></article>
+          <article class="scout-role"><h4>Feedback Memory &amp; Calibrator</h4><p>Stores fit ratings and reasons, then supplies applicable examples and preferences to future searches.</p></article>
+        </div>
+        <div class="note"><h4>Implemented feedback boundary</h4><p>Feedback does not itself start a new search, authorize outreach, rewrite agent code, retrain model weights or override required audience criteria. It enriches the context of subsequent searches within the same workspace and approved audience, while deterministic rules remain in control.</p></div>
+        <div class="note"><h4>Next development phase · Proposed, not deployed</h4><p>An evaluation-driven improvement process could generate candidate research strategies or prompt revisions, compare them against independent evaluation cases and release only validated improvements with version history and rollback. This is a planned capability—not a current production feature.</p></div>
         <div class="note"><h4>Why this matters for marketing technology</h4><p>Scout demonstrates the same product judgment required in lifecycle and customer-data systems: source quality, a stable record model, explainable segmentation, governed activation, integration ownership and measurable feedback. It is a prospect-intelligence product, not an enterprise CDP deployment.</p></div>
         <p class="demolink"><a href="https://scout.jidokagroup.com/">Visit Scout →</a> &nbsp; <a href="https://jidokagroup.com/owner/scout?demo=1&amp;view=discover">Explore the fictional interactive demo →</a></p>
       </section>
