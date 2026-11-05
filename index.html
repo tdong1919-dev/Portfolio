@@ -114,6 +114,34 @@ code{font-family:var(--mono);font-size:.86em;background:var(--surface-2);padding
 .build p{font-size:15.5px;color:var(--ink-2);font-weight:400;line-height:1.6;}
 .build .files{font-family:var(--mono);font-size:11.5px;color:var(--muted);border-top:1px dashed var(--rule-strong);padding-top:11px;margin-top:auto;word-break:break-word;}
 .build.feature{grid-column:1/-1;border-left:3px solid var(--accent);}
+.build ul,.experience-card ul{margin:0;padding-left:19px;color:var(--ink-2);font-size:14px;line-height:1.55;}
+.build li,.experience-card li{margin:0 0 7px;}
+.build li:last-child,.experience-card li:last-child{margin-bottom:0;}
+.build strong,.experience-card strong{color:var(--ink);}
+.quickfit{background:var(--surface);border:1px solid var(--rule-strong);border-left:4px solid var(--accent);padding:24px;border-radius:5px;display:grid;gap:15px;}
+.quickfit h2{font-size:clamp(22px,3vw,32px);line-height:1.18;}
+.quickfit p{font-size:15px;line-height:1.5;color:var(--ink-2);max-width:70ch;}
+.quickfit ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+.quickfit li{padding:12px;background:var(--surface-2);border:1px solid var(--rule);border-radius:4px;font-size:13px;line-height:1.5;}
+.quickfit li strong{display:block;font-size:14px;color:var(--ink);margin-bottom:4px;}
+.archive-list{display:grid;gap:12px;}
+.case-toggle{background:var(--surface);border:1px solid var(--rule-strong);border-radius:5px;min-width:0;}
+.case-toggle>summary{cursor:pointer;list-style:none;display:flex;gap:15px;align-items:center;justify-content:space-between;padding:18px 20px;}
+.case-toggle>summary::-webkit-details-marker{display:none;}
+.case-toggle>summary::after{content:'+';color:var(--accent);font-size:27px;font-weight:400;line-height:1;}
+.case-toggle[open]>summary::after{content:'−';}
+.case-toggle>summary strong{display:block;font-size:19px;color:var(--ink);}
+.case-toggle>summary small{display:block;font-size:12px;color:var(--ink-2);margin-top:5px;line-height:1.5;}
+.case-body{padding:20px;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:35px;min-width:0;}
+.case-body>section{min-width:0;}
+.project-lens{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;}
+.project-lens>div{background:var(--surface-2);border:1px solid var(--rule);border-top:2px solid var(--accent);border-radius:4px;padding:12px;font-size:13px;color:var(--ink);line-height:1.45;}
+.project-lens small{display:block;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--brass);font-family:var(--mono);margin-bottom:6px;}
+.technical-deep{border-top:1px solid var(--rule);padding-top:12px;min-width:0;}
+.technical-deep>summary{cursor:pointer;font-size:14px;font-family:var(--mono);color:var(--accent);padding:12px 0;}
+.technical-deep>section{margin-top:24px;min-width:0;}
+@media(max-width:700px){.quickfit{padding:18px;}.quickfit ul{grid-template-columns:1fr;gap:7px;}.case-toggle>summary{padding:15px;}.case-body{padding:14px;}}
+@media(max-width:700px){.project-lens{grid-template-columns:repeat(2,minmax(0,1fr));}}
 
 .divider{display:flex;align-items:center;gap:16px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
 .divider::after{content:"";flex:1;height:1px;background:var(--rule-strong);}
@@ -354,7 +382,8 @@ dl.summary dd ul{margin:0;padding-left:18px;display:flex;flex-direction:column;g
 @media (max-width:1000px){.wf{grid-template-columns:repeat(3,minmax(0,1fr));}}
 @media (max-width:600px){.wf{grid-template-columns:1fr;}}
 /* ── SVG architecture figure ────────────────────────────────────────────── */
-.figwrap{margin:0;display:flex;flex-direction:column;gap:12px;}
+.figwrap{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0;}
+@media(max-width:700px){.case-body .figwrap{overflow-x:auto;overscroll-behavior-x:contain;}.case-body .figwrap img,.case-body .figwrap svg{min-width:720px;max-width:none;}.case-body .figwrap figcaption{max-width:100%;}}
 .archsvg{width:100%;max-width:100%;height:auto;display:block;color:var(--ink-2);}
 .archsvg rect.n{fill:var(--surface);stroke:var(--rule-strong);stroke-width:1;}
 .archsvg rect.hot{fill:var(--surface-2);stroke:var(--accent);stroke-width:1.5;}
@@ -518,29 +547,22 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
       <a href="#beauty">From operator to builder</a>
       <a href="#scout">Scout · featured product</a>
       <a href="#cdp">Customer data &amp; lifecycle platforms</a>
-      <a href="#archive">Technical case-study archive</a>
+      <a href="#archive">More product case studies</a>
     </nav>
 
     <main class="main">
+      <section class="quickfit" aria-labelledby="quickfit-title">
+        <span class="eyebrow">The 30-second overview · Beauty × Customer Data × Product</span>
+        <h2 id="quickfit-title">I know beauty customers. I build the systems behind better customer experiences.</h2>
+        <p>My career began in the beauty industry, where I owned three studios and worked in commerce, education and marketing. I now connect that experience to customer data platforms, lifecycle activation and AI products. For a brand like e.l.f., I care about making every touchpoint more relevant, accessible and useful.</p>
+        <ul>
+          <li><strong>Beauty operator → marketing leader</strong>Three concurrent studios · SocoLashes commerce · beauty education</li>
+          <li><strong>Hands-on CDP &amp; lifecycle</strong>Twilio Segment · Shopify · Klaviyo · Salesforce · GoHighLevel</li>
+          <li><strong>Product builder &amp; integrator</strong>JIDOKA Scout + Marketing OS · CRM APIs · n8n · governed AI</li>
+        </ul>
+      </section>
 
-
-
-
-
-
-
-
-      <div class="caprail">
-        <span class="ck">Architecture at a glance</span>
-        <span>Deterministic decision engines</span>
-        <span>Agent orchestration</span>
-        <span>Human-in-the-loop controls</span>
-        <span>Evidence &amp; provenance</span>
-        <span>API &amp; data integration</span>
-        <span>Governance &amp; observability</span>
-      </div>
-
-      <div class="divider">Industry experience meets technical design</div>
+      <div class="divider">The career behind the products</div>
 
       <section id="beauty">
         <div class="sec-head">
@@ -563,15 +585,23 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
         </div>
         <details class="disc"><summary>Watch: speaking at an industry conference · 50 seconds</summary><div class="discbody"><p>A candid clip from a lash-industry conference, documenting my experience presenting to an audience of beauty professionals.</p><video controls preload="none" playsinline poster="assets/lash-conference.webp" style="display:block;width:min(100%,420px);max-height:640px;background:#111;border-radius:4px" aria-label="Crystal speaking at a lash industry conference"><source src="assets/conference-speaking.mp4" type="video/mp4">Your browser does not support embedded video.</video></div></details>
         <div class="builds">
-          <article class="build feature"><span class="tag">Featured · Beauty e-commerce &amp; education</span><h3>SocoLashes &amp; Soco Lashes Academy</h3><p>During my three-year tenure, SocoLashes grew 40% year over year and generated more than <strong>$200K in monthly company-wide revenue</strong>, driven primarily by Shopify commerce and conventions. I worked across beauty education, commerce and digital customer journeys.</p><p>For Soco Lashes Academy, I led the design and team execution of its online education funnel: lead capture, course checkout, cart-abandonment payment-plan offers, advanced-course and one-on-one upsells, and post-purchase community engagement.</p><div class="files">Role: digital funnel strategy, design &amp; team execution · Shopify commerce · lifecycle marketing</div></article>
-          <article class="build"><span class="tag">Industry foundation · Business operations</span><h3>Bare Studios &amp; Balanced Beauty</h3><p>Salon ownership and hands-on beauty services shaped my approach to consultations, booking, rebooking, retention, service consistency and the realities of a growing team's workflow.</p><div class="files">Expertise: customer experience · service operations · retention</div></article>
-          <article class="build"><span class="tag">Implemented · Active JIDOKA marketing product</span><h3>JIDOKA Marketing OS</h3><p>Designed and built a connected marketing workflow that aggregates research and trend signals, develops content ideas, filming scripts and captions, and supports automated social publishing. I actively use Marketing OS to market JIDOKA Scout—connecting market insight, creative production and distribution in one operating process.</p><div class="files">My role: product direction, workflow architecture &amp; implementation · Research → Strategy → Content → Publishing</div></article>
-          <article class="build"><span class="tag">Applied AI · Integration architecture</span><h3>JIDOKA Scout &amp; Core</h3><p>Scout focuses on identifying relevant outreach prospects; Core connects work across existing business tools. Together, they illustrate how I think about source data, routing, records, handoffs and governed actions—not isolated AI prompts.</p><div class="files">Lens: structured records · APIs · orchestration · permission gates</div></article>
+          <article class="build feature"><span class="tag">Beauty commerce · 3-year tenure</span><h3>SocoLashes &amp; Academy</h3><ul><li><strong>$200K+ monthly company revenue; 40% YoY growth</strong> during my tenure.</li><li>Led Academy's <strong>online education funnel</strong> with the team: lead capture, checkout, abandoned-cart recovery, upsells and community.</li><li>Configured <strong>Shopify customer segments and lifecycle workflows</strong>.</li></ul></article>
+          <article class="build"><span class="tag">Beauty founder · Operator</span><h3>Bare Studios &amp; Balanced Beauty</h3><ul><li>Opened my first studio at <strong>18</strong>.</li><li>Built and operated <strong>three locations simultaneously</strong>.</li><li>Led teams and owned the customer experience from booking to retention.</li></ul></article>
+          <article class="build"><span class="tag">Live product · Marketing automation</span><h3>JIDOKA Marketing OS</h3><ul><li><strong>Research and trend signals</strong> inform content strategy.</li><li>Generates <strong>ideas, filming scripts and captions</strong>.</li><li>Automates social publishing; <strong>actively used to market Scout</strong>.</li></ul></article>
+          <article class="build"><span class="tag">AI product · CRM integration</span><h3>JIDOKA Scout &amp; Core</h3><ul><li>Built <strong>evidence-backed prospect research and scoring</strong>.</li><li>Connected <strong>outreach drafts, review and CRM handoffs</strong>.</li><li>Designed <strong>governed agent workflows</strong> and feedback-guided research.</li></ul></article>
         </div>
-        <div class="note"><h4>Marketing OS · The product in use</h4><p>I use JIDOKA Marketing OS to run marketing work for Scout today. The system links research and trend signals to content ideas, filming scripts, captions and automated social publishing, while keeping editorial direction in human hands.</p>
+        <details class="case-toggle"><summary><span><strong>JIDOKA Marketing OS · Product workflow</strong><small>Research → Trend insights → Scripts &amp; captions → Automated publishing</small></span></summary><div class="case-body"><p>I use Marketing OS to market Scout: researching audience needs, developing ideas and scripts, and coordinating publishing workflows.</p>
           <div class="experience-flow" aria-label="JIDOKA Marketing OS workflow"><div>01 · Research<small>Aggregate relevant information and trend signals</small></div><div>02 · Interpret<small>Identify audience needs and promising angles</small></div><div>03 · Plan<small>Develop content concepts and production briefs</small></div><div>04 · Produce<small>Draft filming scripts and captions</small></div><div>05 · Publish<small>Automated social distribution and review</small></div></div>
-        </div>
-        <div class="note"><h4>Selected earlier creative and growth work</h4><p>My marketing archive spans beauty and wellness promotional videos for Lashes by Katie &amp; Skincare and CCF Plastic Surgery, e-commerce creative for Beyoutifulwandz, Soco Lashes Academy student testimonials, and content concepts for Wisdom Tea.</p></div>
+        </div></details>
+        <details class="case-toggle"><summary><span><strong>Creative Strategy &amp; Campaign Production</strong><small>Beauty campaigns · e-commerce content · educational media · production leadership</small></span></summary><div class="case-body">
+          <p>I've worked from customer insight and creative strategy through scripting, filming, editing direction and distribution. These examples connect the creative process to the marketing technology that measures and scales it.</p>
+          <div class="experience-grid">
+            <article class="experience-card"><span class="eyebrow">Beauty &amp; wellness</span><h3>Lashes by Katie · CCF Plastic Surgery</h3><ul><li>Promotional video and service storytelling.</li><li>Creative direction shaped around audience questions and customer trust.</li></ul></article>
+            <article class="experience-card"><span class="eyebrow">Commerce &amp; brand</span><h3>Beyoutifulwandz · Wisdom Tea</h3><ul><li>E-commerce visuals and content concepts.</li><li>Product benefits translated into engaging creative angles.</li></ul></article>
+            <article class="experience-card"><span class="eyebrow">Education &amp; production</span><h3>Soco Lashes Academy</h3><ul><li>Student testimonials, training content and professional production sets.</li><li>Education and social content supporting the customer journey.</li></ul></article>
+          </div>
+          <p class="scout-caption">Campaign performance can be reviewed alongside the original creative: reach, engagement, clicks, qualified leads, conversion and attributed revenue where recorded.</p>
+        </div></details>
         <div class="builds">
           <article class="build"><span class="tag">Strategic proposal</span><h3>BTCC · Acquisition &amp; Lead Intelligence Framework</h3><p>Developed an acquisition strategy proposal for a cryptocurrency exchange centered on behavior-based ideal customer profiles, qualified trader and creator segments, five-level lead scoring, KOL prioritization and measurement beyond signups—toward funded accounts, activity and retention.</p><div class="files">Expertise: ICP research · behavioral segmentation · lead quality · lifecycle measurement</div></article>
         </div>
@@ -581,7 +611,8 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
       <section id="scout">
         <div class="sec-head"><div class="kicker">Chapter 02 · Product builder · JIDOKA Scout</div><h2>From audience definition to evidence-backed outreach</h2><p>Scout connects the work of finding a relevant customer or partner to research, qualification, message preparation and downstream operations. I built it around a principle learned from operating businesses: the next action should be grounded, useful and accountable.</p></div>
         <div class="beauty-hero"><span class="eyebrow">The product decision</span><h3>More leads are not the objective. Better-qualified opportunities, with accountable next steps, are.</h3><p class="standfirst">I approach prospecting as a connected data product: define who matters, preserve evidence for why a match qualifies, apply predictable rules before generative assistance, keep a person in control of outreach and carry results into existing business systems.</p><div class="chips"><span class="chip on">B2B prospect discovery</span><span class="chip on">Evidence-based fit scoring</span><span class="chip on">Outreach drafting</span><span class="chip on">CRM / Sheets handoff</span><span class="chip on">Human approval</span><span class="chip on">Feedback signals</span></div></div>
-        <details class="portfolio-expand"><summary>Explore Scout's product funnel, architecture and eight functional AI roles</summary><div class="expand-inner">
+        <details class="case-toggle"><summary><span><strong>Scout · Product architecture</strong><small>Evidence-backed research · Eight functional roles · CRM activation · Feedback</small></span></summary><div class="case-body">
+        <div class="project-lens"><div><small>Input</small>Approved audience &amp; offer</div><div><small>Decision</small>Research &amp; fit verification</div><div><small>Activation</small>Outreach draft &amp; CRM handoff</div><div><small>Control</small>Approval &amp; feedback memory</div></div>
         <div class="divider">01 · Product and marketing funnel · visible in the live demo</div>
         <div class="scout-track">
           <details class="scout-node"><summary><span class="step">01 · DEFINE</span>Audience &amp; offer</summary><p>A business identifies the prospective customer or partnership segment, location and company preferences. A focused five-lead first round makes fit easy to evaluate.</p></details>
@@ -620,13 +651,13 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
       <section id="cdp">
         <div class="sec-head"><div class="kicker">Chapter 03 · Hands-on MarTech &amp; customer data</div><h2>From customer data to lifecycle activation</h2><p>My experience includes hands-on configuration across customer data, CRM, commerce and engagement platforms. I have connected tracking, identity and audiences to practical marketing workflows—not just drafted reference architectures.</p></div>
         <div class="experience-grid" aria-label="Implemented customer data and marketing platform experience">
-          <article class="experience-card"><span class="eyebrow">CDP · Customer data</span><h3>Twilio Segment</h3><p>Personally configured data sources, destinations, tracking events, identity resolution and audience segments. Also worked with Twilio communications APIs for connected messaging workflows.</p></article>
-          <article class="experience-card"><span class="eyebrow">Engagement · Lifecycle automation</span><h3>Klaviyo &amp; GoHighLevel</h3><p>Personally configured customer segments, automated sequences, abandoned-cart recovery and operational workflows, translating audience behavior into customer-facing journeys.</p></article>
-          <article class="experience-card"><span class="eyebrow">Commerce · Beauty industry</span><h3>Shopify · SocoLashes</h3><p>Configured customer segments, commerce automations, checkout abandonment and lifecycle workflows within SocoLashes' Shopify-led e-commerce operations.</p></article>
-          <article class="experience-card"><span class="eyebrow">CRM · Measurement · Integration</span><h3>Salesforce, analytics &amp; APIs</h3><p>Used Salesforce CRM as Head of Marketing for Chevy Chase Facial Plastic Surgery. Additional hands-on tools include Google Analytics, Meta's Conversions API and n8n for measurement, data handoffs and automation.</p></article>
+          <article class="experience-card"><span class="eyebrow">CDP · Customer data</span><h3>Twilio Segment</h3><ul><li><strong>Configured sources, destinations and tracking events</strong>.</li><li>Implemented <strong>identity resolution and audience segmentation</strong>.</li><li>Twilio messaging APIs.</li></ul></article>
+          <article class="experience-card"><span class="eyebrow">Engagement · Lifecycle automation</span><h3>Klaviyo &amp; GoHighLevel</h3><ul><li><strong>Customer segments</strong> and lifecycle campaigns.</li><li><strong>Email/SMS sequences</strong> and abandoned-cart recovery.</li><li>Workflow setup and optimization.</li></ul></article>
+          <article class="experience-card"><span class="eyebrow">Commerce · Beauty industry</span><h3>Shopify · SocoLashes</h3><ul><li><strong>Commerce segmentation</strong> and lifecycle workflows.</li><li>Checkout-abandonment and follow-up automations.</li><li>Beauty customer-journey expertise.</li></ul></article>
+          <article class="experience-card"><span class="eyebrow">CRM · Measurement · Integration</span><h3>Salesforce, analytics &amp; APIs</h3><ul><li><strong>Salesforce CRM</strong> · Head of Marketing, Chevy Chase Facial Plastic Surgery.</li><li><strong>Google Analytics and Meta Conversions API</strong>.</li><li><strong>n8n</strong> integrations and automations.</li></ul></article>
         </div>
         <div class="note"><h4>The product work behind the platforms</h4><p>Customer and business requirements → event and audience definitions → platform configuration and integration → lifecycle activation → measurement and iteration. This is the common thread linking my beauty-commerce work with Scout and JIDOKA Marketing OS.</p></div>
-        <details class="portfolio-expand"><summary>Optional deep dive · Beauty CDP reference architecture</summary><div class="expand-inner">
+        <details class="case-toggle"><summary><span><strong>Beauty CDP · Reference architecture</strong><small>Signals · Identity · Consent · Segmentation · Activation</small></span></summary><div class="case-body">
         <div class="journey-grid">
           <div class="journey-step"><span class="num">01 · SIGNALS</span><b>Collect with purpose</b><p>Commerce transactions, bookings, consented customer profiles, campaign events and customer-service interactions. Document source, timestamp, permitted use and owner.</p></div>
           <div class="journey-step"><span class="num">02 · IDENTITY</span><b>Resolve &amp; govern</b><p>Map identifiers into customer profiles, deduplicate safely, manage consent, define schema and event taxonomy, and monitor match rates and data freshness.</p></div>
@@ -640,10 +671,12 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
         </div></details>
       </section>
 
-      <details id="archive" class="portfolio-expand"><summary>Explore the full technical archive · Fintech AI Brain, REIDE, JIDOKA Core and engineering methods</summary><div class="archive-inner">
-      <div class="divider">Selected technical case studies</div>
+      <section id="archive" class="archive-list" aria-label="Expandable technical case studies">
+      <div class="divider">Additional projects · Open only what interests you</div>
 
-
+      <details class="case-toggle"><summary><span><strong>Fintech AI Brain · Aurumverse</strong><small>Lead intelligence · Deterministic scoring · CRM integrations · Built solo</small></span></summary><div class="case-body">
+      <div class="project-lens"><div><small>Input</small>Website &amp; Telegram leads</div><div><small>Decision</small>Score, segment &amp; dedupe</div><div><small>Activation</small>CRM routing &amp; alerts</div><div><small>Control</small>Audit trail &amp; retries</div></div>
+      <details class="technical-deep"><summary>Explore implementation &amp; architecture diagrams</summary>
       <section id="aurum">
         <div class="sec-head">
           <div class="kicker"><span class="feat">Featured system</span> Case Study 01 · Aurumverse · Dec 2025 – Aug 2026 · Built solo</div>
@@ -868,7 +901,8 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
         <details class="disc"><summary>Architecture decisions</summary><div class="discbody dec2">
           <div class='dq'><b>Why deterministic scoring rather than a model?</b><span>Qualification decides who owns a lead and what reaches an executive. It has to be repeatable and auditable, so the engine is a pure module — no network, no model calls, unit-testable.</span></div><div class='dq'><b>Why split identity credibility from capital potential?</b><span>Version one coupled them, so a gibberish $1M submission scored as a credible whale. Separating the dimensions makes "large money, unconvincing identity" its own outcome: manual review, never escalation.</span></div><div class='dq'><b>Why move the system of record to Postgres?</b><span>The CRM API was capped at 10,000 calls a month and offered no durable deduplication. Postgres enforces one dedup key per lead, so re-importing months of history is a no-op.</span></div><div class='dq'><b>Why claim each inbound update atomically?</b><span>Overlapping workers and retries would otherwise process the same message twice. A unique-constrained insert makes first-writer-wins explicit rather than incidental.</span></div>
         </div></details>
- </section>
+ </section></details>
+      </div></details>
 
 
 
@@ -880,6 +914,9 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
 
 
 
+      <details class="case-toggle"><summary><span><strong>REIDE · Real Estate Decision Engine</strong><small>Data integrations · Evidence validation · Financial modeling · AI boundaries</small></span></summary><div class="case-body">
+      <div class="project-lens"><div><small>Input</small>Property data &amp; documents</div><div><small>Decision</small>Validate evidence &amp; reconcile</div><div><small>Activation</small>Underwrite &amp; report</div><div><small>Control</small>Deterministic calculations</div></div>
+      <details class="technical-deep"><summary>Explore implementation &amp; architecture diagrams</summary>
       <section id="reide">
         <div class="sec-head">
           <div class="kicker">Case Study 02 · REIDE · Jidoka Group, 2026</div>
@@ -988,8 +1025,12 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
         <details class="disc"><summary>Architecture decisions</summary><div class="discbody dec2">
           <div class='dq'><b>Why can the model not emit financial figures?</b><span>The output is a price someone may pay. It must be reproducible and inspectable, so the calc engine owns every number and the model owns only the prose around them.</span></div><div class='dq'><b>Why track confidence per value rather than per document?</b><span>A high-confidence calculation can rest on low-confidence inputs. Collapsing the two hides exactly the risk a committee needs to see.</span></div><div class='dq'><b>Why represent an unconfigured provider explicitly?</b><span>In a tool that outputs a price, a confident-looking fabricated number is the worst available failure. An absent provider says it is absent.</span></div>
         </div></details>
-      </section>
+      </section></details>
+      </div></details>
 
+      <details class="case-toggle"><summary><span><strong>JIDOKA Core · Operating Systems</strong><small>Orchestration · Permissions · Integrations · 200 capability specifications</small></span></summary><div class="case-body">
+      <div class="project-lens"><div><small>Input</small>Business work &amp; events</div><div><small>Decision</small>Classify &amp; route</div><div><small>Activation</small>Agents &amp; business systems</div><div><small>Control</small>Policy, logging &amp; approval</div></div>
+      <details class="technical-deep"><summary>Explore implementation &amp; architecture diagrams</summary>
       <section id="core">
         <div class="sec-head">
           <div class="kicker">Case Study 03 · Jidoka Core · Jidoka Group, 2026</div>
@@ -1164,9 +1205,10 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
       
           </div>
         </details>
- </section>
+ </section></details>
+      </div></details>
 
-
+      <details class="case-toggle"><summary><span><strong>Architecture principles &amp; engineering methods</strong><small>Shared design patterns · Governance · Lessons learned · Technical reference</small></span></summary><div class="case-body">
 
 
       <section id="principles">
@@ -1295,6 +1337,7 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
       </section>
 
       </div></details>
+      </section>
 
       <footer>
         <span>Aurumverse · Capital relations engine · built solo</span>
