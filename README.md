@@ -8,7 +8,7 @@ as a data URI, so it renders correctly from any static host.
 ## Case studies
 
 The portfolio now opens with beauty-industry operating context (Bare Studios,
-Balanced Beauty, Autom8 IG, JIDOKA Scout/Core) and an explicitly illustrative
+Balanced Beauty, JIDOKA Marketing OS, JIDOKA Scout/Core) and an explicitly illustrative
 customer data platform architecture. The CDP journey is a reference design,
 not a claim of enterprise CDP implementation. This positioning supports
 MarTech, AI product ownership and customer-data platform applications while
