@@ -195,6 +195,33 @@ td strong{font-weight:600;color:var(--ink);}
 .chip.on{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
 .beauty-hero{background:linear-gradient(130deg,var(--accent-soft),var(--surface) 66%);border:1px solid var(--rule-strong);border-left:4px solid var(--brass);padding:26px;border-radius:4px;display:grid;gap:14px;}
 .beauty-hero h3{font-family:var(--quote);font-size:clamp(26px,3.3vw,39px);line-height:1.2;font-weight:400;}
+.creative-intro{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px;align-items:center;margin-bottom:18px;}
+.creative-intro p{font-size:15px;line-height:1.55;color:var(--ink-2);}
+.creative-process{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;}
+.creative-process span{font:10px var(--mono);border:1px solid var(--rule-strong);background:var(--surface-2);padding:7px 9px;border-radius:20px;white-space:nowrap;}
+.creative-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+.creative-work{min-width:0;background:var(--surface);border:1px solid var(--rule-strong);border-radius:5px;overflow:hidden;display:flex;flex-direction:column;}
+.creative-cover{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#174f4c,#b9c8bd);overflow:hidden;}
+.creative-cover img{width:100%;height:100%;object-fit:cover;display:block;}
+.creative-cover .creative-number{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.94);color:#184843;font:11px var(--mono);padding:5px 9px;border-radius:2px;}
+.creative-work:nth-child(2) .creative-cover{background:linear-gradient(125deg,#b39b8b,#6f4b40);}
+.creative-work:nth-child(3) .creative-cover{background:linear-gradient(135deg,#7a6b8d,#b4a3b4);}
+.creative-details{padding:17px;display:flex;flex-direction:column;gap:9px;flex:1;}
+.creative-details h3{font-size:18px;line-height:1.25;}
+.creative-details p{font-size:13px;line-height:1.45;color:var(--ink-2);}
+.creative-details .role{font-size:12px;color:var(--accent);font-weight:600;}
+.creative-player{margin-top:auto;border-top:1px solid var(--rule);}
+.creative-player summary{padding:13px 17px;cursor:pointer;color:var(--accent);font-size:13px;font-weight:600;}
+.creative-player[open] summary{border-bottom:1px solid var(--rule);}
+.creative-player iframe{width:100%;aspect-ratio:16/10;border:0;background:#222;display:block;}
+.creative-player a{display:block;margin:10px 15px 15px;color:var(--accent);font-size:12px;text-decoration:underline;text-underline-offset:3px;}
+.creative-proof{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+.creative-proof article{padding:16px;border:1px solid var(--rule);background:var(--surface);border-radius:4px;}
+.creative-proof h4{font-size:15px;margin-bottom:6px;}
+.creative-proof p{font-size:13px;line-height:1.5;color:var(--ink-2);}
+.creative-proof a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
+@media(max-width:850px){.creative-gallery{grid-template-columns:repeat(2,minmax(0,1fr));}.creative-intro{grid-template-columns:1fr;}.creative-process{justify-content:flex-start;}}
+@media(max-width:600px){.creative-gallery,.creative-proof{grid-template-columns:1fr;}.creative-cover{aspect-ratio:16/10;}.creative-details{padding:15px;}.creative-work{max-width:100%;}}
 .opportunity-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0;}
 .opportunity{background:var(--surface);border:1px solid var(--rule-strong);border-top:3px solid var(--accent);padding:20px;min-width:0;display:flex;flex-direction:column;gap:13px;border-radius:4px;}
 .opportunity .num{font:11px var(--mono);letter-spacing:.1em;color:var(--brass);}
@@ -602,13 +629,31 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
           <div class="experience-flow" aria-label="JIDOKA Marketing OS workflow"><div>01 · Research<small>Aggregate relevant information and trend signals</small></div><div>02 · Interpret<small>Identify audience needs and promising angles</small></div><div>03 · Plan<small>Develop content concepts and production briefs</small></div><div>04 · Produce<small>Draft filming scripts and captions</small></div><div>05 · Publish<small>Automated social distribution and review</small></div></div>
         </div></details>
         <details class="case-toggle"><summary><span><strong>Creative Strategy &amp; Campaign Production</strong><small>Beauty campaigns · e-commerce content · educational media · production leadership</small></span></summary><div class="case-body">
-          <p>I've worked from customer insight and creative strategy through scripting, filming, editing direction and distribution. These examples connect the creative process to the marketing technology that measures and scales it.</p>
-          <div class="experience-grid">
-            <article class="experience-card"><span class="eyebrow">Beauty &amp; wellness</span><h3>Lashes by Katie · CCF Plastic Surgery</h3><ul><li>Promotional video and service storytelling.</li><li>Creative direction shaped around audience questions and customer trust.</li></ul></article>
-            <article class="experience-card"><span class="eyebrow">Commerce &amp; brand</span><h3>Beyoutifulwandz · Wisdom Tea</h3><ul><li>E-commerce visuals and content concepts.</li><li>Product benefits translated into engaging creative angles.</li></ul></article>
-            <article class="experience-card"><span class="eyebrow">Education &amp; production</span><h3>Soco Lashes Academy</h3><ul><li>Student testimonials, training content and professional production sets.</li><li>Education and social content supporting the customer journey.</li></ul></article>
+          <div class="creative-intro">
+            <p>Creative direction informed by the full customer journey—what earns attention, builds trust and moves someone toward a useful next step. I planned and executed campaigns with production teams across beauty services, aesthetics, e-commerce and education.</p>
+            <div class="creative-process" aria-label="Creative process"><span>Audience insight</span><span>Concept &amp; script</span><span>Production</span><span>Distribution</span><span>Measurement</span></div>
           </div>
-          <p class="scout-caption">Campaign performance can be reviewed alongside the original creative: reach, engagement, clicks, qualified leads, conversion and attributed revenue where recorded.</p>
+          <div class="creative-gallery" aria-label="Selected original beauty and commerce campaign videos">
+            <article class="creative-work">
+              <div class="creative-cover"><img src="https://drive.google.com/thumbnail?id=1Fe2NCYtviZnj-h9ykD3psOTywot5yald&amp;sz=w800" alt="Preview from the Lashes by Katie and Skincare campaign video" loading="lazy" onerror="this.style.display='none'"><span class="creative-number">01 · BEAUTY SERVICES</span></div>
+              <div class="creative-details"><h3>Lashes by Katie &amp; Skincare</h3><p>Service-led short-form creative designed to make a personal beauty experience feel approachable.</p><p class="role">Lens: audience trust · discovery · bookings</p></div>
+              <details class="creative-player"><summary>Watch campaign video</summary><iframe loading="lazy" title="Lashes by Katie and Skincare campaign video" src="https://drive.google.com/file/d/1Fe2NCYtviZnj-h9ykD3psOTywot5yald/preview" allow="autoplay; fullscreen" allowfullscreen></iframe><a href="https://drive.google.com/file/d/1Fe2NCYtviZnj-h9ykD3psOTywot5yald/view" target="_blank" rel="noopener noreferrer">Open original in Google Drive ↗</a></details>
+            </article>
+            <article class="creative-work">
+              <div class="creative-cover"><img src="https://drive.google.com/thumbnail?id=1lNqd4zpY_Gf7w_JK6kxhkOzO9cdhFKTR&amp;sz=w800" alt="Preview from the CCF Plastic Surgery marketing video" loading="lazy" onerror="this.style.display='none'"><span class="creative-number">02 · AESTHETICS</span></div>
+              <div class="creative-details"><h3>CCF Plastic Surgery</h3><p>Beauty and aesthetics storytelling where clarity, credibility and customer confidence matter.</p><p class="role">Lens: consideration · education · inquiries</p></div>
+              <details class="creative-player"><summary>Watch campaign video</summary><iframe loading="lazy" title="CCF Plastic Surgery campaign video" src="https://drive.google.com/file/d/1lNqd4zpY_Gf7w_JK6kxhkOzO9cdhFKTR/preview" allow="autoplay; fullscreen" allowfullscreen></iframe><a href="https://drive.google.com/file/d/1lNqd4zpY_Gf7w_JK6kxhkOzO9cdhFKTR/view" target="_blank" rel="noopener noreferrer">Open original in Google Drive ↗</a></details>
+            </article>
+            <article class="creative-work">
+              <div class="creative-cover"><img src="https://drive.google.com/thumbnail?id=1gHs2Al44UptvGme7WWc7WVkW-an1zRVy&amp;sz=w800" alt="Preview from Beyoutifulwandz e-commerce creative" loading="lazy" onerror="this.style.display='none'"><span class="creative-number">03 · E-COMMERCE</span></div>
+              <div class="creative-details"><h3>Beyoutifulwandz</h3><p>Product-focused commerce creative built to translate a visual hook into product interest.</p><p class="role">Lens: product discovery · consideration · conversion</p></div>
+              <details class="creative-player"><summary>Watch campaign video</summary><iframe loading="lazy" title="Beyoutifulwandz e-commerce campaign video" src="https://drive.google.com/file/d/1gHs2Al44UptvGme7WWc7WVkW-an1zRVy/preview" allow="autoplay; fullscreen" allowfullscreen></iframe><a href="https://drive.google.com/file/d/1gHs2Al44UptvGme7WWc7WVkW-an1zRVy/view" target="_blank" rel="noopener noreferrer">Open original in Google Drive ↗</a></details>
+            </article>
+          </div>
+          <div class="creative-proof">
+            <article><h4>Soco Lashes Academy · Voice of customer</h4><p>Student testimonials and professional education content that supported trust in a learning product. <a href="https://drive.google.com/drive/folders/1PnknkkE5aBUdzl7zkGt86bzwvnwnGkMo" target="_blank" rel="noopener noreferrer">View the testimonial collection ↗</a></p></article>
+            <article><h4>From creative to measurable journeys</h4><p>My marketing work connects content with segmentation, Shopify and Klaviyo journeys, conversion tracking and post-campaign learning—so production decisions serve the customer experience.</p></article>
+          </div>
         </div></details>
         <div class="builds">
           <article class="build"><span class="tag">Strategic proposal</span><h3>BTCC · Acquisition &amp; Lead Intelligence Framework</h3><p>Developed an acquisition strategy proposal for a cryptocurrency exchange centered on behavior-based ideal customer profiles, qualified trader and creator segments, five-level lead scoring, KOL prioritization and measurement beyond signups—toward funded accounts, activity and retention.</p><div class="files">Expertise: ICP research · behavioral segmentation · lead quality · lifecycle measurement</div></article>
