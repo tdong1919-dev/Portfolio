@@ -182,11 +182,20 @@ td strong{font-weight:600;color:var(--ink);}
 @media(max-width:1000px){.scout-track{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:540px){.scout-track{grid-template-columns:1fr;}}
 .story-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0;}
-.story-gallery figure{background:var(--surface);border:1px solid var(--rule);border-radius:4px;overflow:hidden;}
+.story-gallery figure{margin:0;min-width:0;background:var(--surface);border:1px solid var(--rule);border-radius:4px;overflow:hidden;}
 .story-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
 .story-gallery figure:last-child img{object-position:center 18%;}
-.story-gallery figcaption{padding:11px 12px;color:var(--ink-2);font-size:12px;line-height:1.45;}
+.story-gallery figcaption{padding:13px 14px;color:var(--ink-2);font-size:13px;line-height:1.5;}
 @media(max-width:760px){.story-gallery{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:600px){.story-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}.story-gallery img{aspect-ratio:4/3;}.story-gallery figcaption{padding:10px;font-size:12px;line-height:1.4;}}
+.portfolio-expand{border:1px solid var(--rule-strong);background:var(--surface);border-radius:5px;min-width:0;}
+.portfolio-expand > summary{cursor:pointer;padding:20px 22px;color:var(--ink);font-family:var(--display);font-weight:600;font-size:18px;line-height:1.4;}
+.portfolio-expand > summary::marker{color:var(--brass);}
+.portfolio-expand > summary:hover{color:var(--accent);}
+.expand-inner{padding:4px 22px 25px;display:flex;flex-direction:column;gap:25px;}
+.archive-inner{padding:28px 20px;display:flex;flex-direction:column;gap:70px;}
+.story-intro{font-family:var(--quote);font-size:clamp(21px,3vw,30px);font-weight:400;line-height:1.45;color:var(--ink);max-width:32ch;}
+@media(max-width:600px){.portfolio-expand > summary{padding:17px;font-size:16px;}.expand-inner,.archive-inner{padding:10px 16px 22px;}.main{gap:44px;}.shell{padding-left:18px;padding-right:18px;}.beauty-hero{padding:20px;}}
 .journey-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
 .journey-step{background:var(--surface);border:1px solid var(--rule);padding:18px;display:flex;flex-direction:column;gap:8px;border-radius:4px;}
 .journey-step b{font-size:15px;line-height:1.3;}
@@ -410,7 +419,7 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
 .themeswitch .tdot{width:11px;height:11px;border-radius:50%;flex:none;
   background:linear-gradient(90deg,var(--ink) 0 50%,transparent 50%);
   box-shadow:inset 0 0 0 1px var(--rule-strong);}
-@media (max-width:700px){.themeswitch{top:10px;right:10px;padding:7px 12px;font-size:10px;}}
+@media (max-width:700px){.themeswitch{position:absolute;top:10px;right:10px;padding:7px 12px;font-size:10px;}}
 @media print{.themeswitch{display:none;}}
 </style>
 </head>
@@ -469,7 +478,7 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
         <span class="spec">Customer journeys | Data architecture | Integrations | Applied AI</span>
       </div>
       <div class="links">
-        <a href="https://www.linkedin.com/in/crystalthuydong">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/crystalthuydong" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:tdong1919@gmail.com">tdong1919@gmail.com</a>
         <a href="tel:+12024101925">(202) 410-1925</a>
         <span class="loc">Washington, DC</span>
@@ -478,53 +487,28 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
     <div class="ctas">
       <a class="cta primary" href="#beauty">Beauty &amp; marketing technology</a>
       <a class="cta" href="mailto:tdong1919@gmail.com?subject=Portfolio%20and%20resume%20request">Request resume</a>
-      <a class="cta ghost" href="https://github.com/tdong1919-dev">GitHub</a>
+      <a class="cta ghost" href="https://github.com/tdong1919-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
     <div class="statgroups">
+      <div class="statgroup"><div class="sysname">01 · Entrepreneur</div><div class="pair"><div class="s"><b>18</b><span>Age at first studio</span></div><div class="s"><b>3</b><span>Concurrent locations</span></div></div></div>
       <div class="statgroup">
-        <div class="sysname">01 · Fintech AI Brain</div>
-        <div class="pair">
-          <div class="s"><b>2,225</b><span>Leads captured</span></div>
-          <div class="s"><b>~400</b><span>Filtered as bot</span></div>
-        </div>
+        <div class="sysname">02 · Beauty commerce experience</div>
+        <div class="pair"><div class="s"><b>$200K+</b><span>SocoLashes monthly business revenue</span></div><div class="s"><b>40%</b><span>Year-over-year growth</span></div></div>
       </div>
       <div class="statgroup">
-        <div class="sysname">02 · REIDE</div>
-        <div class="pair">
-          <div class="s"><b>16</b><span>Underwriting stages</span></div>
-          <div class="s"><b>13</b><span>Data providers</span></div>
-        </div>
-      </div>
-      <div class="statgroup">
-        <div class="sysname">03 · Jidoka Core</div>
-        <div class="pair">
-          <div class="s"><b>200</b><span>Agent specifications</span></div>
-          <div class="s"><b>11</b><span>Business functions</span></div>
-        </div>
+        <div class="sysname">03 · Product builder</div>
+        <div class="pair"><div class="s"><b>8</b><span>Scout functional AI roles</span></div><div class="s"><b>1</b><span>Governed feedback loop</span></div></div>
       </div>
     </div>
   </header>
 
   <div class="cols">
     <nav class="rail" aria-label="Contents">
-      <div class="rail-head">Industry &amp; Data</div>
-      <a href="#beauty">Beauty + MarTech</a>
-      <a href="#scout">Scout product architecture</a>
-      <a href="#cdp">CDP reference design</a>
-      <div class="rail-head">Case Study 01</div>
-      <a href="#aurum">Fintech AI Brain</a>
-      <div class="rail-head">Case Study 02</div>
-      <a href="#reide">REIDE</a>
-      <div class="rail-head">Case Study 03</div>
-      <a href="#core">Jidoka Core</a>
-      <div class="rail-head">Reference</div>
-      <a href="#principles">Design principles</a>
-      <a href="#architecture">Reference architecture</a>
-      <a href="#practice">How I work</a>
-      <a href="#stack">Stack</a>
-      <a href="#claims">Evidence &amp; provenance</a>
-      <a href="#learned">What I learned</a>
-      <a href="#focus">Areas of focus</a>
+      <div class="rail-head">Career &amp; product story</div>
+      <a href="#beauty">From operator to builder</a>
+      <a href="#scout">Scout · featured product</a>
+      <a href="#cdp">Customer data perspective</a>
+      <a href="#archive">Technical case-study archive</a>
     </nav>
 
     <main class="main">
@@ -550,10 +534,11 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
 
       <section id="beauty">
         <div class="sec-head">
-          <div class="kicker">Beauty industry × Customer experience × Applied AI</div>
+          <div class="kicker">Chapter 01 · Founder → Operator → Strategist</div>
           <h2>From the treatment room to the customer journey</h2>
-          <p>I understand the difference between collecting a customer record and making that record useful to the person serving the customer. That perspective shapes how I approach marketing technology and data products.</p>
+          <p>I built and led three beauty studio locations, then moved toward marketing, education and technology because I wanted to improve how businesses connect with people at scale.</p>
         </div>
+        <p class="story-intro">The customer experience came first. The systems thinking came from trying to make it better.</p>
         <div class="beauty-hero">
           <span class="eyebrow">The intersection I work at</span>
           <h3>A brand experience is one continuous relationship—even when its data lives in separate tools.</h3>
@@ -561,10 +546,10 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
           <div class="chips"><span class="chip on">Beauty operations</span><span class="chip on">Customer acquisition</span><span class="chip on">CRM / lifecycle design</span><span class="chip on">Integrations &amp; APIs</span><span class="chip on">Agentic automation</span><span class="chip on">Human review</span></div>
         </div>
         <div class="story-gallery" aria-label="Career photographs">
-          <figure><img src="assets/salon-team.webp" alt="Crystal with her beauty studio team in a professional group portrait" loading="lazy"><figcaption><strong>Founder &amp; operator</strong> · Building teams and customer experiences across three concurrent studios.</figcaption></figure>
-          <figure><img src="assets/beauty-education.webp" alt="Crystal teaching a beauty education class with a projected lash-training presentation" loading="lazy"><figcaption><strong>Educator</strong> · Translating expertise into structured training and customer education.</figcaption></figure>
-          <figure><img src="assets/lash-conference.webp" alt="Crystal speaking into a microphone on stage at a lash industry conference" loading="lazy"><figcaption><strong>Industry speaker</strong> · Sharing expertise with the wider beauty community.</figcaption></figure>
-          <figure><img src="assets/soco-director.webp" alt="Soco Lashes Academy feature introducing Crystal as Online Education Director" loading="lazy"><figcaption><strong>Digital education leader</strong> · Soco Lashes Academy's published director profile.</figcaption></figure>
+          <figure><img src="assets/beauty-education.webp" alt="Crystal and her beauty studio team in a professional group portrait" loading="lazy"><figcaption><strong>Founder &amp; operator</strong> · Led three beauty studio locations.</figcaption></figure>
+          <figure><img src="assets/beauty-classroom.webp" alt="Crystal teaching students in a classroom with a projected lash-training lesson" loading="lazy"><figcaption><strong>Beauty educator</strong> · Teaching industry professionals.</figcaption></figure>
+          <figure><img src="assets/salon-team.webp" alt="Crystal speaking on stage at a lash industry conference" loading="lazy"><figcaption><strong>Industry speaker</strong> · Presenting to beauty professionals.</figcaption></figure>
+          <figure><img src="assets/lash-conference.webp" alt="Soco Lashes Academy's published feature introducing Crystal as Online Education Director" loading="lazy"><figcaption><strong>Education director</strong> · Soco Lashes Academy.</figcaption></figure>
         </div>
         <details class="disc"><summary>Watch: speaking at an industry conference · 50 seconds</summary><div class="discbody"><p>A candid clip from a lash-industry conference, documenting my experience presenting to an audience of beauty professionals.</p><video controls preload="none" playsinline poster="assets/lash-conference.webp" style="display:block;width:min(100%,420px);max-height:640px;background:#111;border-radius:4px" aria-label="Crystal speaking at a lash industry conference"><source src="assets/conference-speaking.mp4" type="video/mp4">Your browser does not support embedded video.</video></div></details>
         <div class="builds">
@@ -577,13 +562,13 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
         <div class="builds">
           <article class="build"><span class="tag">Strategic proposal · Not implemented</span><h3>BTCC · Acquisition &amp; Lead Intelligence Framework</h3><p>Prepared a proposed acquisition framework for a cryptocurrency exchange centered on behavior-based ideal customer profiles, qualified trader and creator segments, five-level lead scoring, KOL prioritization and measurement beyond signups—toward funded accounts, activity and retention. <strong>The proposal did not proceed to implementation</strong>; it is presented as a strategy artifact, not a client deployment or delivered result.</p><div class="files">Lens: ICP research · behavioral segmentation · lead quality · lifecycle measurement</div></article>
         </div>
-        <p class="demolink"><a href="https://deploy-preview-628--fancy-cuchufli-240b34.netlify.app/scout">Explore a Scout product preview →</a></p>
         <div class="note"><h4>My product lens</h4><p>For a beauty brand, the goal is not merely more automation. It is a trusted, permission-aware customer view that can support acquisition, service, education, replenishment and retention—with clear ownership of identity, consent, data quality and measurable outcomes.</p></div>
       </section>
 
       <section id="scout">
-        <div class="sec-head"><div class="kicker">Featured product · JIDOKA Scout</div><h2>From audience definition to evidence-backed outreach</h2><p>Scout connects a marketing problem—finding the right next customer or partner—to research, qualification, message preparation and downstream operations. The live demo exposes the user journey; the architecture below separates visible product behavior from the founder-described internal design.</p></div>
+        <div class="sec-head"><div class="kicker">Chapter 02 · Product builder · JIDOKA Scout</div><h2>From audience definition to evidence-backed outreach</h2><p>Scout connects the work of finding a relevant customer or partner to research, qualification, message preparation and downstream operations. I built it around a principle learned from operating businesses: the next action should be grounded, useful and accountable.</p></div>
         <div class="beauty-hero"><span class="eyebrow">The product decision</span><h3>More leads are not the objective. Better-qualified opportunities, with accountable next steps, are.</h3><p class="standfirst">I approach prospecting as a connected data product: define who matters, preserve evidence for why a match qualifies, apply predictable rules before generative assistance, keep a person in control of outreach and carry results into existing business systems.</p><div class="chips"><span class="chip on">B2B prospect discovery</span><span class="chip on">Evidence-based fit scoring</span><span class="chip on">Outreach drafting</span><span class="chip on">CRM / Sheets handoff</span><span class="chip on">Human approval</span><span class="chip on">Feedback signals</span></div></div>
+        <details class="portfolio-expand"><summary>Explore Scout's product funnel, architecture and eight functional AI roles</summary><div class="expand-inner">
         <div class="divider">01 · Product and marketing funnel · visible in the live demo</div>
         <div class="scout-track">
           <details class="scout-node"><summary><span class="step">01 · DEFINE</span>Audience &amp; offer</summary><p>A business identifies the prospective customer or partnership segment, location and company preferences. A focused five-lead first round makes fit easy to evaluate.</p></details>
@@ -614,12 +599,14 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
         </div>
         <div class="note"><h4>Implemented feedback boundary</h4><p>Feedback does not itself start a new search, authorize outreach, rewrite agent code, retrain model weights or override required audience criteria. It enriches the context of subsequent searches within the same workspace and approved audience, while deterministic rules remain in control.</p></div>
         <div class="note"><h4>Next development phase · Proposed, not deployed</h4><p>An evaluation-driven improvement process could generate candidate research strategies or prompt revisions, compare them against independent evaluation cases and release only validated improvements with version history and rollback. This is a planned capability—not a current production feature.</p></div>
+        </div></details>
         <div class="note"><h4>Why this matters for marketing technology</h4><p>Scout demonstrates the same product judgment required in lifecycle and customer-data systems: source quality, a stable record model, explainable segmentation, governed activation, integration ownership and measurable feedback. It is a prospect-intelligence product, not an enterprise CDP deployment.</p></div>
-        <p class="demolink"><a href="https://scout.jidokagroup.com/">Visit Scout →</a> &nbsp; <a href="https://jidokagroup.com/owner/scout?demo=1&amp;view=discover">Explore the fictional interactive demo →</a></p>
+        <p class="demolink"><a href="https://scout.jidokagroup.com/" target="_blank" rel="noopener noreferrer">Explore the Scout product ↗</a></p>
       </section>
 
       <section id="cdp">
-        <div class="sec-head"><div class="kicker">Reference architecture · Illustrative, not deployed</div><h2>How I would approach a beauty customer data platform</h2><p>A concrete design exercise demonstrating my understanding of identity, activation and AI-driven lifecycle workflows. This is a proposed architecture informed by my operating and systems experience, not a claim that I have run an enterprise CDP.</p></div>
+        <div class="sec-head"><div class="kicker">Chapter 03 · Customer data &amp; marketing activation</div><h2>From disconnected touchpoints to a trusted customer view</h2><p>For a beauty brand, the challenge is turning commerce, campaign, service and engagement signals into useful, consent-aware customer experiences. My architecture exercise maps how ingestion, identity, segmentation and activation should work together. It is illustrative—not a claim of enterprise CDP implementation.</p></div>
+        <details class="portfolio-expand"><summary>Explore my proposed beauty CDP reference architecture</summary><div class="expand-inner">
         <div class="journey-grid">
           <div class="journey-step"><span class="num">01 · SIGNALS</span><b>Collect with purpose</b><p>Commerce transactions, bookings, consented customer profiles, campaign events and customer-service interactions. Document source, timestamp, permitted use and owner.</p></div>
           <div class="journey-step"><span class="num">02 · IDENTITY</span><b>Resolve &amp; govern</b><p>Map identifiers into customer profiles, deduplicate safely, manage consent, define schema and event taxonomy, and monitor match rates and data freshness.</p></div>
@@ -630,8 +617,10 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
         </div>
         <div class="flowwrap"><div class="flow"><span class="node">Consented touchpoints</span><span class="arw">→</span><span class="node hot">Identity &amp; CDP</span><span class="arw">→</span><span class="node gate">Policy &amp; consent</span><span class="arw">→</span><span class="node hot">Segment / AI assist</span><span class="arw">→</span><span class="node">CRM · email · SMS · ads</span><span class="arw">→</span><span class="node">Measure &amp; learn</span></div></div>
         <details class="disc"><summary>Example journey: consultation to thoughtful follow-up</summary><div class="discbody dec2"><p>A customer books a skincare consultation. The booking event enters the data layer with an explicit consent state and a source identifier. Profile matching attaches it to an existing record only where confidence is sufficient; uncertain matches go to review.</p><p>After the appointment, an eligible segment may receive permitted care education or a replenishment reminder. An agent can draft recommendations, but cannot infer medical conditions or send without the required policy check. Engagement, opt-out and booking outcomes feed back to measurement.</p><p><strong>Architecture exercise only:</strong> This illustrates decision boundaries and data flows. It does not represent a live integration with any cosmetic brand.</p></div></details>
+        </div></details>
       </section>
 
+      <details id="archive" class="portfolio-expand"><summary>Explore the full technical archive · Fintech AI Brain, REIDE, JIDOKA Core and engineering methods</summary><div class="archive-inner">
       <div class="divider">Selected technical case studies</div>
 
 
@@ -878,7 +867,7 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
           <p class="desc">Real Estate Investment Decision Engine — institutional underwriting infrastructure.</p>
         </div>
 
-        <p class="demolink"><a href="https://reide.netlify.app">Open the live app at reide.netlify.app →</a></p>
+        <p class="demolink"><a href="https://reide.netlify.app" target="_blank" rel="noopener noreferrer">Open the live app at reide.netlify.app →</a></p>
 
         <div class="flowwrap">
           <div class="flow">
@@ -988,7 +977,7 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
           <p class="desc">Orchestration layer for reusable organisational capabilities.</p>
         </div>
 
-        <p class="demolink"><a href="https://jidokagroup.com/jidoka-core/demo">Try the live demo at jidokagroup.com/jidoka-core/demo →</a></p>
+        <p class="demolink"><a href="https://jidokagroup.com/jidoka-core/demo" target="_blank" rel="noopener noreferrer">Try the live demo at jidokagroup.com/jidoka-core/demo →</a></p>
 
 
         <dl class="kdp">
@@ -1284,6 +1273,8 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
           <span class="chip on">AI-enabled operational systems</span>
         </div>
       </section>
+
+      </div></details>
 
       <footer>
         <span>Aurumverse · Capital relations engine · built solo</span>
