@@ -167,6 +167,12 @@ td strong{font-weight:600;color:var(--ink);}
 .chip.on{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
 .beauty-hero{background:linear-gradient(130deg,var(--accent-soft),var(--surface) 66%);border:1px solid var(--rule-strong);border-left:4px solid var(--brass);padding:26px;border-radius:4px;display:grid;gap:14px;}
 .beauty-hero h3{font-family:var(--quote);font-size:clamp(26px,3.3vw,39px);line-height:1.2;font-weight:400;}
+.story-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0;}
+.story-gallery figure{background:var(--surface);border:1px solid var(--rule);border-radius:4px;overflow:hidden;}
+.story-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+.story-gallery figure:last-child img{object-position:center 18%;}
+.story-gallery figcaption{padding:11px 12px;color:var(--ink-2);font-size:12px;line-height:1.45;}
+@media(max-width:760px){.story-gallery{grid-template-columns:repeat(2,minmax(0,1fr));}}
 .journey-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
 .journey-step{background:var(--surface);border:1px solid var(--rule);padding:18px;display:flex;flex-direction:column;gap:8px;border-radius:4px;}
 .journey-step b{font-size:15px;line-height:1.3;}
@@ -440,7 +446,7 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
 
   <header class="masthead">
     <h1>Beauty industry insight. <span class="amp">Systems that connect.</span></h1>
-    <p class="standfirst">I bring an operator's understanding of beauty and customer experience to the technical work of connected marketing: customer data, lifecycle journeys, AI agents, APIs, and reliable workflows. I have worked inside beauty services, owned a salon business, and built applied AI systems.</p>
+    <p class="standfirst">I opened my first beauty studio at 18 and went on to operate three locations simultaneously. After more than a decade building in beauty, I sold the salon business to pursue a new passion: building the marketing technology, customer data workflows and AI systems that help businesses reach and serve people better.</p>
     <p class="heroline">My focus: translate what customers and operators need into practical, governed product and integration decisions—without confusing a compelling prototype with a production deployment.</p>
     <div class="byline">
       <div class="who">
@@ -538,6 +544,12 @@ details.disc > summary:focus-visible{outline:2px solid var(--accent);outline-off
           <h3>A brand experience is one continuous relationship—even when its data lives in separate tools.</h3>
           <p class="standfirst">Beauty operators see the friction firsthand: an inquiry arrives on social, an appointment happens in another system, the purchase history sits elsewhere, and follow-up depends on someone remembering. My work connects the business process to a technically accountable workflow.</p>
           <div class="chips"><span class="chip on">Beauty operations</span><span class="chip on">Customer acquisition</span><span class="chip on">CRM / lifecycle design</span><span class="chip on">Integrations &amp; APIs</span><span class="chip on">Agentic automation</span><span class="chip on">Human review</span></div>
+        </div>
+        <div class="story-gallery" aria-label="Career photographs">
+          <figure><img src="assets/salon-team.webp" alt="Crystal with her beauty studio team in a professional group portrait" loading="lazy"><figcaption><strong>Founder &amp; operator</strong> · Building teams and customer experiences across three concurrent studios.</figcaption></figure>
+          <figure><img src="assets/beauty-education.webp" alt="Crystal teaching a beauty education class with a projected lash-training presentation" loading="lazy"><figcaption><strong>Educator</strong> · Translating expertise into structured training and customer education.</figcaption></figure>
+          <figure><img src="assets/lash-conference.webp" alt="Crystal speaking into a microphone on stage at a lash industry conference" loading="lazy"><figcaption><strong>Industry speaker</strong> · Sharing expertise with the wider beauty community.</figcaption></figure>
+          <figure><img src="assets/soco-director.webp" alt="Soco Lashes Academy feature introducing Crystal as Online Education Director" loading="lazy"><figcaption><strong>Digital education leader</strong> · Soco Lashes Academy's published director profile.</figcaption></figure>
         </div>
         <div class="builds">
           <article class="build feature"><span class="tag">Featured · Implemented · Beauty e-commerce</span><h3>SocoLashes &amp; Soco Lashes Academy</h3><p>During a three-year tenure with SocoLashes, I worked across beauty education, commerce and digital customer journeys. The parent business generated <strong>$200K+ in monthly revenue</strong>, primarily through Shopify and conventions, and experienced <strong>40% year-over-year growth</strong> during my tenure. These are business-wide figures—not revenue attributable to the Academy or my funnel.</p><p>For Soco Lashes Academy, I led the design and execution of an implemented online education sales funnel with the team: prospect email/phone capture, course checkout, cart-abandonment payment-plan offers, advanced-course and one-on-one upsells, and post-purchase community engagement. Academy-specific revenue and conversion figures were not separately available.</p><div class="files">Role: digital funnel strategy, design &amp; team execution · Shopify-led commerce context · lifecycle marketing</div></article>
