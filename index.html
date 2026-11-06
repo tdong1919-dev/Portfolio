@@ -39,16 +39,15 @@ header{background:rgba(248,246,243,.97)}
 .media-card:nth-child(2) .media-cover{background:linear-gradient(135deg,#716861,#d1c7c4)}
 .media-card:nth-child(3) .media-cover{background:linear-gradient(135deg,#ccc2bc,#ece5dc)}
 .tech-flow span{border-color:#d4c8bc}
-.journey-map{margin:0 0 19px;padding:22px 20px 19px;background:#f4efe9;border:1px solid #d8cfc5;border-radius:4px}
-.journey-map-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:20px}
-.journey-map-head h4{font:500 24px/1.1 Didot,"Bodoni MT","Bodoni Moda",Georgia,serif;margin:0;color:var(--ink)}
-.journey-map-head span{font:600 10px/1.4 Montserrat,Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
-.journey-stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px;list-style:none;margin:0;padding:0;counter-reset:journey}
-.journey-stages li{position:relative;min-width:0;padding:15px 11px 13px;background:var(--paper);border:1px solid #ded5ca;border-radius:3px}
-.journey-stages li:not(:last-child):after{content:"→";position:absolute;left:calc(100% + 2px);top:50%;transform:translateY(-50%);color:#948273;font-size:17px;z-index:1}
-.journey-stages .num{font-size:10px;letter-spacing:.16em;font-weight:700;color:#9c836a}
-.journey-stages strong{display:block;font-size:12px;line-height:1.35;margin:9px 0 5px;color:var(--ink)}
-.journey-stages p{font-size:11px;line-height:1.45;margin:0;color:var(--muted)}
+.case-expand{margin-top:5px;border-top:1px solid var(--line)}
+.case-expand>summary{cursor:pointer;padding:13px 0;color:#695545;font-size:13px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.case-expand>summary::-webkit-details-marker{display:none}
+.case-expand>summary:after{content:"+";font-size:20px;font-weight:400}
+.case-expand[open]>summary:after{content:"−"}
+.case-content{padding:15px 0 3px}
+.case-content .tech-flow span{background:#f8f6f3}
+.case-content .tech-flow{margin-bottom:17px}
+.project:has(.case-expand[open]){grid-column:1/-1}
 .ownership-notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
 .ownership-notes div{border-top:1px solid #c6b5a5;padding:11px 4px 0}
 .ownership-notes h4{font-size:10px;letter-spacing:.13em;text-transform:uppercase;margin:0 0 7px;color:#806b55}
@@ -61,7 +60,7 @@ header{background:rgba(248,246,243,.97)}
 @media(max-width:800px){.wrap{padding:0 20px}.hero{gap:25px;padding-top:42px;padding-bottom:42px}.hero-photo{aspect-ratio:3/4}.proof{grid-template-columns:repeat(2,minmax(0,1fr))}.proof div:nth-child(2){border-right:0}.proof div:nth-child(-n+2){border-bottom:1px solid var(--line)}.story,.ideas,.media{grid-template-columns:1fr}.story{grid-template-columns:repeat(3,minmax(0,1fr))}.section-head{display:block}.section-head p{margin-top:12px}}
 @media(max-width:600px){.top{min-height:67px}.top nav{gap:10px}.top nav a:not(.contact){display:none}.hero{grid-template-columns:1fr}.hero-photo{aspect-ratio:16/9;max-height:260px}.hero-photo img{object-position:center 34%}h1{font-size:42px}.proof strong{font-size:25px}.proof div{padding:16px}.story,.projects{grid-template-columns:1fr}.story article{display:grid;grid-template-columns:115px 1fr}.story img{height:100%;aspect-ratio:auto}.story .copy{padding:13px}.story .copy p{font-size:12px}.story .copy h3{font-size:16px}.project{padding:18px}section{padding-top:62px}.ideas{gap:8px}.accordion>summary{font-size:15px;padding:17px}.inside{padding:14px}.tech-points{grid-template-columns:1fr}.tech-flow{display:grid;grid-template-columns:1fr}.tech-flow b{justify-content:center;transform:rotate(90deg);min-height:13px}.foot{display:block}.foot span{display:block;margin-bottom:9px}}
 @media(max-width:600px){.media-card iframe{width:100%;max-width:340px;aspect-ratio:9/16;max-height:75svh}.media-card details>summary{min-height:44px;display:flex;align-items:center}}
-@media(max-width:700px){.journey-map{padding:17px 15px}.journey-map-head{display:block;margin-bottom:15px}.journey-map-head h4{margin-top:5px;font-size:22px}.journey-stages{grid-template-columns:1fr;gap:14px}.journey-stages li{padding:11px 14px}.journey-stages li:not(:last-child):after{content:"↓";left:50%;top:calc(100% + 1px);transform:translateX(-50%);font-size:15px}.journey-stages strong{margin:3px 0}.ownership-notes{grid-template-columns:1fr;gap:13px}}
+@media(max-width:700px){.ownership-notes{grid-template-columns:1fr;gap:13px}}
 </style>
 </head>
 <body>
@@ -100,7 +99,16 @@ header{background:rgba(248,246,243,.97)}
   <section id="work" class="wrap">
     <div class="section-head"><div><span class="eyebrow">Selected proof</span><h2>Work that connects business needs to technical execution</h2></div><p>Four examples, each showing a different part of the customer journey.</p></div>
     <div class="projects">
-      <article class="project"><span class="k">Beauty commerce + lifecycle</span><h3>SocoLashes &amp; Academy</h3><p>Led digital education and built purchase-triggered Shopify lifecycle journeys connecting professional supplies, courses and consultations.</p><strong class="result">99% student-reported course satisfaction · ~150 consultations/month in final year</strong></article>
+      <article class="project"><span class="k">Beauty commerce + lifecycle</span><h3>SocoLashes &amp; Academy</h3><p>Led digital education and built purchase-triggered Shopify lifecycle journeys connecting professional supplies, courses and consultations.</p><strong class="result">99% student-reported course satisfaction · ~150 consultations/month in final year</strong>
+        <details class="case-expand"><summary>Explore the customer journey</summary><div class="case-content">
+          <div class="tech-flow" aria-label="SocoLashes customer lifecycle architecture"><span>Shopify purchase</span><b aria-hidden="true">→</b><span>Customer segment</span><b aria-hidden="true">→</b><span>Course + coaching offer</span><b aria-hidden="true">→</b><span>Behavioral follow-up</span><b aria-hidden="true">→</b><span>Consultation + nurture</span></div>
+          <div class="ownership-notes">
+            <div><h4>My ownership</h4><p>Led Academy curriculum and launch with schools and beauty brands; configured Shopify segmentation, offers and conditional follow-up.</p></div>
+            <div><h4>Product decision</h4><p>Connect professional supply purchases with accessible education and sustained relationships, not one-off promotions.</p></div>
+            <div><h4>Business outcome</h4><p><b>99%</b> student-reported satisfaction; approximately <b>150 consultations/month</b> across the program in my final year. Some customers converted after 2–3 months.</p></div>
+          </div>
+        </div></details>
+      </article>
       <article class="project"><span class="k">Product + AI + integrations</span><h3>JIDOKA Scout</h3><p>Led a quality-first prospect research product: market analysis, evidence-backed qualification, tailored outreach drafts and CRM activation.</p><strong class="result">125 → 10 minutes per ~5 qualified leads · 92% less time</strong><a href="https://scout.jidokagroup.com" target="_blank" rel="noopener noreferrer">Explore Scout ↗</a></article>
       <article class="project"><span class="k">Marketing operations</span><h3>JIDOKA Marketing OS</h3><p>Trend aggregation, content concepts, film scripts, captions and automated social publishing—used to market Scout.</p><strong class="result">Research → creative → distribution in one workflow</strong></article>
       <article class="project"><span class="k">Growth + funnel intelligence</span><h3>Aurumverse</h3><p>Investor audience qualification, lead scoring, segmentation and sales-call routing.</p><strong class="result">2,225 waitlist leads · ~60% signup-to-booked-call conversion</strong></article>
@@ -131,23 +139,6 @@ header{background:rgba(248,246,243,.97)}
     <details class="accordion"><summary>Technical deep dives · Architecture and integrations</summary><div class="inside">
       <p>Explore the systems behind the results. Each case follows the same structure: <b>data flow, engineering decisions and business use.</b></p>
       <div class="tech-list">
-        <details class="tech-case"><summary><span>SocoLashes Academy + Lifecycle Marketing<small>Beauty education · Shopify customer data · segmentation · nurturing</small></span></summary><div class="tech-body">
-          <div class="journey-map" aria-label="SocoLashes lifecycle customer journey">
-            <div class="journey-map-head"><span>Customer data → meaningful relationships</span><h4>From a purchase to professional growth</h4></div>
-            <ol class="journey-stages">
-              <li><span class="num">01 / SIGNAL</span><strong>Shopify purchase</strong><p>Professional lash supplies</p></li>
-              <li><span class="num">02 / AUDIENCE</span><strong>Customer segment</strong><p>Relevant education needs</p></li>
-              <li><span class="num">03 / ACTIVATE</span><strong>Tailored course offer</strong><p>Coaching + 24-hour coupon</p></li>
-              <li><span class="num">04 / RESPOND</span><strong>Engagement-based follow-up</strong><p>Offer click → timed extension</p></li>
-              <li><span class="num">05 / RELATIONSHIP</span><strong>Consultation + nurture</strong><p>Complimentary call + monthly care</p></li>
-            </ol>
-          </div>
-          <div class="ownership-notes">
-            <div><h4>My ownership</h4><p>Led Academy curriculum and launch with schools and beauty brands; configured Shopify segmentation, offers and conditional follow-up.</p></div>
-            <div><h4>Product decision</h4><p>Connect professional supply purchases with accessible education and sustained relationships, not one-off promotions.</p></div>
-            <div><h4>Business outcome</h4><p><b>99%</b> student-reported satisfaction; approximately <b>150 consultations/month</b> across the program in my final year. Some customers converted after 2–3 months.</p></div>
-          </div>
-        </div></details>
         <details class="tech-case"><summary><span>JIDOKA Scout<small>Research agents · deterministic validation · feedback memory · CRM</small></span></summary><div class="tech-body">
           <div class="tech-flow"><span>Approved audience</span><b>→</b><span>Public-source research</span><b>→</b><span>Fit + evidence checks</span><b>→</b><span>Outreach draft + CRM</span><b>→</b><span>Feedback context</span></div>
           <div class="tech-points"><div><h4>Product ownership</h4><ul><li><b>Problem:</b> High-volume lead lists often lacked relevance, leaving founders unsure who to contact or why.</li><li><b>Decision:</b> Optimize for prospect fit and evidence, with outreach grounded in the business offer and market analysis.</li><li><b>Execution:</b> Led specialized research stages, deterministic workflow checks, CRM connections and customer feedback memory.</li></ul></div><div><h4>Activation + measured result</h4><ul><li>Customers rate fit, give reasons, and revise ratings; applicable feedback informs subsequent searches for the same workspace and audience.</li><li>Duplicate prevention, permissions, approval and spending controls remain stable.</li><li><b>92% less time:</b> approximately 10 minutes versus 125 minutes manually for five qualified leads with personalized drafts.</li></ul></div></div>
