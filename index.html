@@ -39,10 +39,14 @@ header{background:rgba(248,246,243,.97)}
 .media-card:nth-child(2) .media-cover{background:linear-gradient(135deg,#716861,#d1c7c4)}
 .media-card:nth-child(3) .media-cover{background:linear-gradient(135deg,#ccc2bc,#ece5dc)}
 .tech-flow span{border-color:#d4c8bc}
+.media-card iframe{display:block;width:min(100%,340px);height:auto;aspect-ratio:9/16;margin:0 auto;background:#171717}
+.media-card details[open]{background:#171717}
+.media-card details[open]>summary{background:var(--paper)}
 .bottom{background:#514941}.bottom p{color:#f0eae3}.bottom .button{background:#fffdfb}.bottom .button.alt{border-color:#d2c7bd}
 .foot{border-top-color:#8c7d71;color:#eee6de}.foot a{color:#eee6de}
 @media(max-width:800px){.wrap{padding:0 20px}.hero{gap:25px;padding-top:42px;padding-bottom:42px}.hero-photo{aspect-ratio:3/4}.proof{grid-template-columns:repeat(2,minmax(0,1fr))}.proof div:nth-child(2){border-right:0}.proof div:nth-child(-n+2){border-bottom:1px solid var(--line)}.story,.ideas,.media{grid-template-columns:1fr}.story{grid-template-columns:repeat(3,minmax(0,1fr))}.section-head{display:block}.section-head p{margin-top:12px}}
 @media(max-width:600px){.top{min-height:67px}.top nav{gap:10px}.top nav a:not(.contact){display:none}.hero{grid-template-columns:1fr}.hero-photo{aspect-ratio:16/9;max-height:260px}.hero-photo img{object-position:center 34%}h1{font-size:42px}.proof strong{font-size:25px}.proof div{padding:16px}.story,.projects{grid-template-columns:1fr}.story article{display:grid;grid-template-columns:115px 1fr}.story img{height:100%;aspect-ratio:auto}.story .copy{padding:13px}.story .copy p{font-size:12px}.story .copy h3{font-size:16px}.project{padding:18px}section{padding-top:62px}.ideas{gap:8px}.accordion>summary{font-size:15px;padding:17px}.inside{padding:14px}.tech-points{grid-template-columns:1fr}.tech-flow{display:grid;grid-template-columns:1fr}.tech-flow b{justify-content:center;transform:rotate(90deg);min-height:13px}.foot{display:block}.foot span{display:block;margin-bottom:9px}}
+@media(max-width:600px){.media-card iframe{width:100%;max-width:340px;aspect-ratio:9/16;max-height:75svh}.media-card details>summary{min-height:44px;display:flex;align-items:center}}
 </style>
 </head>
 <body>
