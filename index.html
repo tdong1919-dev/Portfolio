@@ -16,9 +16,14 @@ section{padding-top:82px}.section-head{display:flex;align-items:end;justify-cont
 .projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.project{padding:24px;background:var(--paper);border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;gap:9px}.project .k{color:var(--gold);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}.project p{font-size:14px;margin:0}.project strong.result{font-size:15px;color:var(--ink);border-top:1px solid var(--line);padding-top:11px;margin-top:auto}.project a{font-size:13px;color:#1f6a61;font-weight:650;text-underline-offset:4px}
 .accordion{border:1px solid var(--line);border-radius:5px;background:var(--paper);overflow:hidden}.accordion>summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:19px 22px;font-weight:700;font-size:17px}.accordion>summary::-webkit-details-marker{display:none}.accordion>summary:after{content:'+';font-size:24px;color:var(--gold);font-weight:400}.accordion[open]>summary:after{content:'−'}.inside{border-top:1px solid var(--line);padding:20px 22px 24px}.inside>p{font-size:14px;max-width:780px}.ideas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.idea{background:var(--bg);border:1px solid var(--line);padding:18px;border-radius:4px}.idea .n{font-size:11px;color:var(--gold);font-weight:700}.idea h3{font-size:17px;margin:9px 0}.idea p,.idea li{font-size:13px;line-height:1.5;color:var(--body)}.idea ul{padding-left:18px;margin:0}.idea .metric{border-top:1px solid var(--line);margin-top:13px;padding-top:10px;color:var(--ink);font-weight:650;font-size:12px}
 .media{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.media-card{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--paper)}.media-cover{aspect-ratio:16/10;background:linear-gradient(135deg,#15443f,#b8c6b7)}.media-cover img{height:100%;width:100%;object-fit:cover}.media-card:nth-child(2) .media-cover{background:linear-gradient(135deg,#78685b,#c9af9b)}.media-card:nth-child(3) .media-cover{background:linear-gradient(135deg,#6a627c,#cabfd1)}.media-copy{padding:15px}.media-copy h3{font-size:16px}.media-copy p{font-size:12px;margin:0 0 9px}.media-copy a{font-size:12px;font-weight:650;color:#1f6a61}.media-card iframe{width:100%;aspect-ratio:16/10;border:0;background:#222}.media-card details>summary{font-size:12px;font-weight:650;padding:12px 15px;border-top:1px solid var(--line);cursor:pointer;color:var(--ink)}
+.tech-list{display:grid;gap:10px}.tech-case{border:1px solid var(--line);border-radius:4px;background:var(--bg)}.tech-case>summary{cursor:pointer;padding:16px;font-size:15px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:16px;list-style:none}.tech-case>summary::-webkit-details-marker{display:none}.tech-case>summary:after{content:'+';color:var(--gold);font-size:21px;font-weight:400}.tech-case[open]>summary:after{content:'−'}.tech-case small{display:block;color:var(--muted);font-size:12px;font-weight:400;margin-top:3px}.tech-body{border-top:1px solid var(--line);padding:16px}.tech-flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin-bottom:15px}.tech-flow span{padding:9px 12px;border:1px solid #bfd0c8;border-radius:3px;background:white;font-size:12px;font-weight:650;flex:1;min-width:110px;text-align:center}.tech-flow b{display:flex;align-items:center;color:var(--gold);font-weight:400}.tech-points{display:grid;grid-template-columns:1fr 1fr;gap:15px}.tech-points h4{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin:0 0 7px}.tech-points ul{font-size:13px;color:var(--body);line-height:1.55;margin:0;padding-left:19px}.tech-points li{margin-bottom:5px}
 .bottom{padding:78px 0;margin-top:84px;background:#173d39;color:#fff}.bottom h2{color:#fff;font-size:35px}.bottom p{color:#dce8e1;max-width:590px}.bottom .button{background:white;color:var(--ink);border-color:white}.bottom .button.alt{background:transparent;color:white;border-color:#abc7bb}.foot{margin-top:42px;border-top:1px solid #477168;padding-top:20px;display:flex;gap:20px;justify-content:space-between;font-size:12px;color:#c5d8cd}.foot a{color:#c5d8cd}
+.hero-photo span{top:12px;bottom:auto;left:12px;right:auto;max-width:calc(100% - 24px);white-space:nowrap;padding:7px 10px;font-size:11px;border-radius:2px}
+.story video{height:100%;width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:#e8e7e3}
+.story article:first-child img{object-position:15% center}
+.story article:nth-child(3) img{object-position:76% center}
 @media(max-width:800px){.wrap{padding:0 20px}.hero{gap:25px;padding-top:42px;padding-bottom:42px}.hero-photo{aspect-ratio:3/4}.proof{grid-template-columns:repeat(2,minmax(0,1fr))}.proof div:nth-child(2){border-right:0}.proof div:nth-child(-n+2){border-bottom:1px solid var(--line)}.story,.ideas,.media{grid-template-columns:1fr}.story{grid-template-columns:repeat(3,minmax(0,1fr))}.section-head{display:block}.section-head p{margin-top:12px}}
-@media(max-width:600px){.top{min-height:67px}.top nav{gap:10px}.top nav a:not(.contact){display:none}.hero{grid-template-columns:1fr}.hero-photo{aspect-ratio:16/9;max-height:260px}.hero-photo img{object-position:center 34%}h1{font-size:42px}.proof strong{font-size:25px}.proof div{padding:16px}.story,.projects{grid-template-columns:1fr}.story article{display:grid;grid-template-columns:115px 1fr}.story img{height:100%;aspect-ratio:auto}.story .copy{padding:13px}.story .copy p{font-size:12px}.story .copy h3{font-size:16px}.project{padding:18px}section{padding-top:62px}.ideas{gap:8px}.accordion>summary{font-size:15px;padding:17px}.inside{padding:14px}.foot{display:block}.foot span{display:block;margin-bottom:9px}}
+@media(max-width:600px){.top{min-height:67px}.top nav{gap:10px}.top nav a:not(.contact){display:none}.hero{grid-template-columns:1fr}.hero-photo{aspect-ratio:16/9;max-height:260px}.hero-photo img{object-position:center 34%}h1{font-size:42px}.proof strong{font-size:25px}.proof div{padding:16px}.story,.projects{grid-template-columns:1fr}.story article{display:grid;grid-template-columns:115px 1fr}.story img{height:100%;aspect-ratio:auto}.story .copy{padding:13px}.story .copy p{font-size:12px}.story .copy h3{font-size:16px}.project{padding:18px}section{padding-top:62px}.ideas{gap:8px}.accordion>summary{font-size:15px;padding:17px}.inside{padding:14px}.tech-points{grid-template-columns:1fr}.tech-flow{display:grid;grid-template-columns:1fr}.tech-flow b{justify-content:center;transform:rotate(90deg);min-height:13px}.foot{display:block}.foot span{display:block;margin-bottom:9px}}
 </style>
 </head>
 <body>
@@ -29,9 +34,9 @@ section{padding-top:82px}.section-head{display:flex;align-items:end;justify-cont
       <span class="eyebrow">Beauty industry × Customer data × Marketing technology</span>
       <h1>I know beauty customers. I build the technology that connects with them.</h1>
       <p class="lead">I opened my first salon at 18, grew to three studios, and moved into beauty commerce, marketing leadership and product development. Today, I turn customer insight into <b>connected data, lifecycle journeys and useful AI products.</b></p>
-      <div class="cta-row"><a class="button" href="#work">See selected work</a><a class="button alt" href="mailto:tdong1919@gmail.com?subject=Resume%20request">Request résumé</a></div>
+      <div class="cta-row"><a class="button" href="#work">See selected work</a><a class="button alt" href="mailto:tdong1919@gmail.com?subject=Resume%20request">Request resume</a></div>
     </div>
-    <div class="hero-photo"><img src="assets/beauty-education.webp" alt="Crystal with her beauty studio team"><span>Founder → Marketing leader → MarTech product builder</span></div>
+    <div class="hero-photo"><img src="assets/beauty-education.webp" alt="Crystal with her beauty studio team"><span>Beauty founder → MarTech builder</span></div>
   </div>
 
   <div class="wrap"><div class="proof" aria-label="Career highlights">
@@ -45,8 +50,8 @@ section{padding-top:82px}.section-head{display:flex;align-items:end;justify-cont
     <div class="section-head"><div><span class="eyebrow">My journey</span><h2>Beauty taught me the problem. Technology gave me a way to solve it.</h2></div></div>
     <div class="story">
       <article><img src="assets/salon-team.webp" alt="Crystal speaking at a beauty industry conference" loading="lazy"><div class="copy"><span>01 · Beauty</span><h3>Built and led</h3><p>Three concurrent studios. Teams, service delivery, customer relationships and retention.</p></div></article>
-      <article><img src="assets/beauty-classroom.webp" alt="Crystal teaching a beauty training class" loading="lazy"><div class="copy"><span>02 · Marketing</span><h3>Scaled experiences</h3><p>SocoLashes commerce and Academy, beauty education, campaigns and lifecycle journeys.</p></div></article>
-      <article><img src="assets/soco-director.webp" alt="Soco Lashes Academy feature showing Crystal as online education director" loading="lazy"><div class="copy"><span>03 · Technology</span><h3>Built the systems</h3><p>Customer data, integrations, CRM activation and governed AI tools at JIDOKA.</p></div></article>
+      <article><video class="scroll-video" muted loop playsinline preload="none" poster="assets/soco-film-poster.webp" aria-label="Behind the scenes of a SocoLashes professional film production"><source src="assets/soco-film-session.mp4" type="video/mp4"></video><div class="copy"><span>02 · Marketing</span><h3>Scaled experiences</h3><p>SocoLashes commerce and Academy, beauty education, campaigns and lifecycle journeys.</p></div></article>
+      <article><img src="assets/beauty-classroom.webp" alt="Crystal presenting digital beauty education in a classroom with projected training materials" loading="lazy"><div class="copy"><span>03 · Technology</span><h3>Built the systems</h3><p>Customer data, integrations, CRM activation and governed AI tools at JIDOKA.</p></div></article>
     </div>
   </section>
 
@@ -84,8 +89,53 @@ section{padding-top:82px}.section-head{display:flex;align-items:end;justify-cont
     </div></details>
   </section>
 
-  <section class="wrap"><div class="platforms"><span class="eyebrow">For technical reviewers</span><h3 style="margin-top:7px">Want the architecture and implementation details?</h3><p>Scout agent workflows, feedback controls, JIDOKA Core, data pipelines, integration patterns and more are preserved in a separate technical portfolio.</p><a class="button alt" href="technical-archive.html" style="margin-top:14px">Open technical deep dives</a></div></section>
+  <section class="wrap" id="technical" aria-label="Technical deep dives">
+    <details class="accordion"><summary>Technical deep dives · Architecture and integrations</summary><div class="inside">
+      <p>Explore the systems behind the results. Each case follows the same structure: <b>data flow, engineering decisions and business use.</b></p>
+      <div class="tech-list">
+        <details class="tech-case"><summary><span>JIDOKA Scout<small>Research agents · deterministic validation · feedback memory · CRM</small></span></summary><div class="tech-body">
+          <div class="tech-flow"><span>Approved audience</span><b>→</b><span>Public-source research</span><b>→</b><span>Fit + evidence checks</span><b>→</b><span>Outreach draft + CRM</span><b>→</b><span>Feedback context</span></div>
+          <div class="tech-points"><div><h4>Architecture decisions</h4><ul><li>Specialized functional stages coordinated through deterministic workflow controls.</li><li>Evidence and exclusion checks before a prospect advances.</li><li>Human approval boundaries for external actions and delivery.</li></ul></div><div><h4>Learning and activation</h4><ul><li>Customers rate fit, give reasons and revise ratings.</li><li>Applicable feedback informs subsequent searches for the same workspace and audience.</li><li>Operational CRM connections, duplicate prevention and spending controls.</li></ul></div></div>
+        </div></details>
+        <details class="tech-case"><summary><span>JIDOKA Marketing OS<small>Trend signals · creative planning · automated publishing</small></span></summary><div class="tech-body">
+          <div class="tech-flow"><span>Research signals</span><b>→</b><span>Audience insights</span><b>→</b><span>Concepts + scripts</span><b>→</b><span>Review + publishing</span></div>
+          <div class="tech-points"><div><h4>Architecture decisions</h4><ul><li>Separate research, planning, copy creation and channel delivery.</li><li>Combine trend data with brand voice and audience intent.</li></ul></div><div><h4>Business use</h4><ul><li>Currently used to market JIDOKA Scout.</li><li>Supports repeatable campaign production from research through publication.</li></ul></div></div>
+        </div></details>
+        <details class="tech-case"><summary><span>Aurumverse · Investor Intelligence<small>Lead scoring · CRM · deterministic routing</small></span></summary><div class="tech-body">
+          <div class="tech-flow"><span>Waitlist + Telegram</span><b>→</b><span>Clean + dedupe</span><b>→</b><span>Score + segment</span><b>→</b><span>CRM + human call</span></div>
+          <div class="tech-points"><div><h4>Architecture decisions</h4><ul><li>Structured investor and intent signals before language-model assistance.</li><li>Lead records and routing decisions persisted for review.</li><li>Human handoffs for sales and sensitive conversations.</li></ul></div><div><h4>Business outcome</h4><ul><li>2,225 waitlist leads captured.</li><li>Approximately 60% of signups progressed to booked sales closing calls.</li></ul></div></div>
+        </div></details>
+        <details class="tech-case"><summary><span>JIDOKA Core + REIDE<small>Governed orchestration · multi-source data and evidence</small></span></summary><div class="tech-body">
+          <div class="tech-flow"><span>Business systems + data</span><b>→</b><span>Validation + context</span><b>→</b><span>Specialized workflows</span><b>→</b><span>Approved actions + audit</span></div>
+          <div class="tech-points"><div><h4>Architecture decisions</h4><ul><li>Core coordinates growth, operations, success and delivery capabilities through shared governance.</li><li>REIDE reconciles document and provider evidence before deterministic financial modeling and AI-generated explanations.</li></ul></div><div><h4>Integration approach</h4><ul><li>Existing CRM, finance, documents, APIs and databases remain systems of record.</li><li>Permission checks, logging, provenance and human review frame actions.</li></ul></div></div>
+        </div></details>
+      </div>
+    </div></details>
+  </section>
 </main>
-<footer class="bottom"><div class="wrap"><span class="eyebrow" style="color:#e2be8a">Connect</span><h2>Better customer experiences start with better connected systems.</h2><p>I'm interested in the product decisions that bring beauty, marketing and technology together—and in the teams willing to build them thoughtfully.</p><div class="cta-row"><a class="button" href="mailto:tdong1919@gmail.com">Get in touch</a><a class="button alt" href="mailto:tdong1919@gmail.com?subject=Resume%20request">Request résumé</a></div><div class="foot"><span>© 2026 Crystal Thuy Dong</span><span><a href="technical-archive.html">Technical portfolio</a></span></div></div></footer>
+<footer class="bottom"><div class="wrap"><span class="eyebrow" style="color:#e2be8a">Connect</span><h2>Better customer experiences start with better connected systems.</h2><p>I'm interested in the product decisions that bring beauty, marketing and technology together—and in the teams willing to build them thoughtfully.</p><div class="cta-row"><a class="button" href="mailto:tdong1919@gmail.com">Get in touch</a><a class="button alt" href="mailto:tdong1919@gmail.com?subject=Resume%20request">Request resume</a></div><div class="foot"><span>© 2026 Crystal Thuy Dong</span><span><a href="#technical">Technical deep dives</a></span></div></div></footer>
+<script>
+(() => {
+  const video = document.querySelector('.scroll-video');
+  if (!video) return;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let visible = false;
+  const syncPlayback = () => {
+    if (visible && !document.hidden && !prefersReducedMotion.matches) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  };
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      syncPlayback();
+    }, { threshold: 0.35 }).observe(video);
+  }
+  document.addEventListener('visibilitychange', syncPlayback);
+  prefersReducedMotion.addEventListener?.('change', syncPlayback);
+})();
+</script>
 </body>
 </html>
