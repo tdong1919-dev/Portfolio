@@ -24,13 +24,11 @@ preserving the original technical case studies below.
 3. **Jidoka Core — Agent Factory.** A six-stage factory over a 200-specification
    library covering eleven business functions.
 
-## Publishing with GitHub Pages
+## Live professional portfolio
 
-Settings → Pages → Source: **Deploy from a branch** → `main` / `root`. The site
-then serves at `https://tdong1919-dev.github.io/Portfolio/`.
+**[View my current Beauty × MarTech portfolio](https://crystalthuydong.netlify.app/)**
 
-For a custom domain, add a `CNAME` file containing the domain and point a DNS
-record at GitHub Pages.
+This repository contains a standalone HTML portfolio variant and technical archive. The current professional portfolio is hosted at the Netlify link above. GitHub Pages is not enabled for this repository, so the old `/Portfolio/` Pages URL should not be used.
 
 ## Editing
 
